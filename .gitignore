@@ -33,6 +33,7 @@ glide.lock
 *.tar.gz
 *.tgz
 *.zip
+*.exe
 
 # opera project specific
 scripts/certs
