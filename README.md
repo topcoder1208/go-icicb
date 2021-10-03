@@ -179,7 +179,7 @@ $HOME/fantom/mainnet.g --nousb --http --http.addr '0.0.0.0' --http.port 8545 --h
 generate genesis
 
 ```shell
-./build/galaxy init d:/icicb/genesis.json --datadir d:/icicb/genesis.g
+./build/galaxy init d:/icicb/testgenesis.json --datadir d:/icicb/genesis.g
 ```
 
 ### generate validator key
@@ -198,20 +198,13 @@ generate genesis
 ./build/galaxy --genesis d:/icicb/genesis.g --datadir d:/icicb/mainnet --nousb --validator.id 2 --validator.pubkey 0xc004398d3a0ee4514dfd111d22a4a54137b2ea79dc179f575f5b3dfe66ccc3348559a28af9ed7c075e3b93a5ff338dc657606104b3030ebcd95d7ad52fa62199553f --validator.password D:\\icicb\\pass-2.txt
 ```
 
-
-
 `galaxy` will prompt you for a password to decrypt your validator private key. Optionally, you can
 specify password with a file using `--validator.password` flag.
-
-
 
 ./build/galaxy --genesis d:/icicb/genesis.g --datadir d:/icicb/mainnet --bootnodes="enode://2cecf66045ee5f0defb2d0d88020a181504295882547b0442bd65246ab1a40e0164eb105558a22c4ce376bc01d25e3344521bc693915aaa5d19eb917c7acfc08@192.168.115.163:5060"
 ./build/galaxy init d:\\icicb\\genesis.json 
 
-
-"init",
-                "d:\\icicb\\genesis.json"
-
+"init","d:\\icicb\\genesis.json"
 "--genesis" 
 "d:/icicb/genesis.g"
 "--datadir"

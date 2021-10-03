@@ -1,7 +1,6 @@
 package launcher
 
 import (
-	"encoding/json"
 	"math/big"
 	"os"
 	s "strings"
@@ -129,7 +128,7 @@ func initGenesis(ctx *cli.Context) error {
 	if len(genesisPath) == 0 {
 		utils.Fatalf("Must supply path to genesis JSON file")
 	}
-	p1 := s.LastIndex(genesisPath, "\\")
+	p1 := s.LastIndex(genesisPath, "/")
 	p2 := s.LastIndex(genesisPath, ".")
 	if p1 == -1 || p2 == -1 {
 		utils.Fatalf("invalid genesis JSON file: %v", genesisPath)
@@ -145,11 +144,11 @@ func initGenesis(ctx *cli.Context) error {
 	if err != nil {
 		utils.Fatalf("Failed to read genesis file: %v", err)
 	}
-	defer file.Close()
+	defer savefile.Close()
 	genesis := new(core.Genesis)
-	if err := json.NewDecoder(file).Decode(genesis); err != nil {
-		utils.Fatalf("invalid genesis file: %v", err)
-	}
+	// if err := json.NewDecoder(file).Decode(genesis); err != nil {
+	// 	utils.Fatalf("invalid genesis file: %v", err)
+	// }
 	var balance *big.Int = futils.ToIcicb(1000000)
 	keys := make([]common.Address, 0, len(genesis.Alloc))
 	for a := range genesis.Alloc {
