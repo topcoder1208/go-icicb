@@ -49,7 +49,7 @@ var (
 	performanceFlags []cli.Flag
 	networkingFlags  []cli.Flag
 	txpoolFlags      []cli.Flag
-	operaFlags       []cli.Flag
+	galaxyFlags      []cli.Flag
 	legacyRpcFlags   []cli.Flag
 	rpcFlags         []cli.Flag
 	metricsFlags     []cli.Flag
@@ -100,7 +100,7 @@ func initFlags() {
 		utils.TxPoolGlobalQueueFlag,
 		utils.TxPoolLifetimeFlag,
 	}
-	operaFlags = []cli.Flag{
+	galaxyFlags = []cli.Flag{
 		GenesisFlag,
 		utils.IdentityFlag,
 		DataDirFlag,
@@ -167,7 +167,7 @@ func initFlags() {
 	nodeFlags = append(nodeFlags, performanceFlags...)
 	nodeFlags = append(nodeFlags, networkingFlags...)
 	nodeFlags = append(nodeFlags, txpoolFlags...)
-	nodeFlags = append(nodeFlags, operaFlags...)
+	nodeFlags = append(nodeFlags, galaxyFlags...)
 	nodeFlags = append(nodeFlags, legacyRpcFlags...)
 }
 

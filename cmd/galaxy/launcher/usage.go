@@ -39,8 +39,8 @@ func calcAppHelpFlagGroups() []flags.FlagGroup {
 	initFlags()
 	return []flags.FlagGroup{
 		{
-			Name:  "OPERA",
-			Flags: operaFlags,
+			Name:  "Galaxy",
+			Flags: galaxyFlags,
 		},
 		{
 			Name:  "TRANSACTION POOL",
