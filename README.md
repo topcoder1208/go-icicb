@@ -179,7 +179,7 @@ $HOME/fantom/mainnet.g --nousb --http --http.addr '0.0.0.0' --http.port 8545 --h
 generate genesis
 
 ```shell
-./build/galaxy init d:/icicb/testgenesis.json --datadir d:/icicb/genesis.g
+./build/galaxy init d:/icicb/genesis.json --datadir d:/icicb/genesis.g
 ```
 
 ### generate validator key
@@ -189,7 +189,7 @@ generate genesis
 
 ### run mainnet
 ```shell
-./build/galaxy --genesis d:/icicb/genesis.g --datadir d:/icicb/mainnet --validator.id 0 --validator.pubkey 0xc0042ddbf4fda4bfefbb4368e3c0626faacfeb9319d08588cdb1a414eee7870ebc4c806aed6c5b01c2b2de5c60ba1cf98510dd4bcaecd56ad2dadc3c976279003797  --validator.password 123456789
+./build/galaxy --genesis d:/icicb/genesis.g --datadir d:/icicb/mainnet --validator.id 0 --validator.pubkey 0xc004f0ae3b8464c6d8b3896b15621404ccebd2dd6b03ae25b040ab9eeaeff26b14194b5e9db0203fae4697097edc8bea6096404d7475ba67545c99a36a8a459efd61 --validator.password D:\\icicb\\pass-1.txt
 ```
 
 ```shell
@@ -204,25 +204,8 @@ specify password with a file using `--validator.password` flag.
 ./build/galaxy --genesis d:/icicb/genesis.g --datadir d:/icicb/mainnet --bootnodes="enode://2cecf66045ee5f0defb2d0d88020a181504295882547b0442bd65246ab1a40e0164eb105558a22c4ce376bc01d25e3344521bc693915aaa5d19eb917c7acfc08@192.168.115.163:5060"
 ./build/galaxy init d:\\icicb\\genesis.json 
 
-"init","d:\\icicb\\genesis.json"
-"--genesis" 
-"d:/icicb/genesis.g"
-"--datadir"
-"d:/icicb/mainnet"
-"--http"
-"--http.addr"
-"'0.0.0.0'"
-"--http.port"
-"8545"
-"--http.corsdomain"
-"\"*\""
-"--http.vhosts"
-"\"*\""
-"--http.api=\"eth,debug,net,admin,web3,personal,txpool,icicb,dag\""
-"--nousb"
-"--validator.id"
-"1"
-"--validator.pubkey"
-"0xc004aa0713a0bc43226ab1f19e9547afc0d4b13fde317142436072d4d959621dc61a1d6ac185fb87ffe81d578c2a89a79e151a77ae71f31b8281e1c690c0f625dcf7"
-"--validator.password"
-"D:\\icicb\\pass-1.txt"
+
+```shell
+./build/galaxy --genesis d:/icicb/genesis.g --datadir d:/icicb/mainnet --validator.id 0 --validator.pubkey 0xc004f0ae3b8464c6d8b3896b15621404ccebd2dd6b03ae25b040ab9eeaeff26b14194b5e9db0203fae4697097edc8bea6096404d7475ba67545c99a36a8a459efd61   --validator.password
+ D:\\icicb\\pass-1.txt
+```

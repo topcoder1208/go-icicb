@@ -58,12 +58,12 @@ func MakeGenesisStore() *genesisstore.Store {
 	genStore.SetRules(galaxy.MainNetRules())
 	var accounts = []ValidatorAccount{
 		{
-			address:   "0xC5df89579D7A2f85b8a4b1a6395083da394Bba92",
-			validator: "0xc004aa0713a0bc43226ab1f19e9547afc0d4b13fde317142436072d4d959621dc61a1d6ac185fb87ffe81d578c2a89a79e151a77ae71f31b8281e1c690c0f625dcf7",
+			address:   "0x118e4c403Ec3e691ff4aC37490aBA2834472bE94",
+			validator: "0xc004f0ae3b8464c6d8b3896b15621404ccebd2dd6b03ae25b040ab9eeaeff26b14194b5e9db0203fae4697097edc8bea6096404d7475ba67545c99a36a8a459efd61",
 		},
 		{
-			address:   "0x82bC5Cd564EA21642910796aE7Ec675772AE642F",
-			validator: "0xc004398d3a0ee4514dfd111d22a4a54137b2ea79dc179f575f5b3dfe66ccc3348559a28af9ed7c075e3b93a5ff338dc657606104b3030ebcd95d7ad52fa62199553f",
+			address:   "0x993A57bc16F40d61A30CA81B4AaDC5bCFf663273",
+			validator: "0xc004a921c3fb31f350b74fdda6a80055e1974265ba7fade036898f48e49d94e77455b568ec790a98c823648e95532f00548473bbe2ac294bef76ec68046e5eed7b72",
 		},
 	}
 	num := len(accounts)
