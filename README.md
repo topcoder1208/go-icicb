@@ -204,13 +204,6 @@ specify password with a file using `--validator.password` flag.
 ./build/galaxy --genesis d:/icicb/genesis.g --datadir d:/icicb/mainnet --bootnodes="enode://2cecf66045ee5f0defb2d0d88020a181504295882547b0442bd65246ab1a40e0164eb105558a22c4ce376bc01d25e3344521bc693915aaa5d19eb917c7acfc08@192.168.115.163:5060"
 ./build/galaxy init d:\\icicb\\genesis.json 
 
-<<<<<<< HEAD
-
-```shell
-./build/galaxy --genesis d:/icicb/genesis.g --datadir d:/icicb/mainnet --validator.id 0 --validator.pubkey 0xc004f0ae3b8464c6d8b3896b15621404ccebd2dd6b03ae25b040ab9eeaeff26b14194b5e9db0203fae4697097edc8bea6096404d7475ba67545c99a36a8a459efd61   --validator.password
- D:\\icicb\\pass-1.txt
-```
-=======
 "init","d:\\icicb\\genesis.json"
 "--genesis" 
 "d:/icicb/genesis.g"
@@ -244,4 +237,3 @@ C:\Users\DonPawl\AppData\Local\Lachesis
 0xc00476a70a1921c0f09dbfb801a32c9d93882df9bc9b437f6639e5c065e2922cfd287555ee1df4245b7c40f5ef8254b51ec7db4cbea1edb58ab6c4eb7f40f984a0d3
 0xc004a0fae63ebebacda92ae98e9f318c48d19752b2bd21b895504e2a395eb0f634a5f09dfac8ba43b2f06a095b6a12fdb56f82593478b8c441d37d7fff616de5dca3
 
->>>>>>> ad2cf3532b71615b9f83be36a8a215a53902085d
