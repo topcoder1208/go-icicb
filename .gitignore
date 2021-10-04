@@ -49,7 +49,7 @@ lachesis_*
 *.graph
 *.gv
 *.finality
-
+TEST.md
 # Backup copies
 *~
 *.bak
