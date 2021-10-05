@@ -240,7 +240,7 @@ func Launch(args []string) error {
 	return app.Run(args)
 }
 
-// opera is the main entry point into the system if no special subcommand is ran.
+// galaxy is the main entry point into the system if no special subcommand is ran.
 // It creates a default node based on the command line arguments and runs it in
 // blocking mode, waiting for it to be shut down.
 func lachesisMain(ctx *cli.Context) error {
@@ -280,8 +280,8 @@ func makeNode(ctx *cli.Context, cfg *config, genesis integration.InputGenesis) (
 	metrics.SetDataDir(cfg.Node.DataDir)
 
 	valKeystore := valkeystore.NewDefaultFileKeystore(path.Join(getValKeystoreDir(cfg.Node), "validator"))
-	valPubkey := cfg.Opera.Emitter.Validator.PubKey
-	if key := getFakeValidatorKey(ctx); key != nil && cfg.Opera.Emitter.Validator.ID != 0 {
+	valPubkey := cfg.Galaxy.Emitter.Validator.PubKey
+	if key := getFakeValidatorKey(ctx); key != nil && cfg.Galaxy.Emitter.Validator.ID != 0 {
 		addFakeValidatorKey(ctx, key, valPubkey, valKeystore)
 		coinbase := integration.SetAccountKey(stack.AccountManager(), key, "fakepassword")
 		log.Info("Unlocked fake validator account", "address", coinbase.Address.Hex())
@@ -298,7 +298,7 @@ func makeNode(ctx *cli.Context, cfg *config, genesis integration.InputGenesis) (
 
 	// Create and register a gossip network service.
 
-	svc, err := gossip.NewService(stack, cfg.Opera, gdb, signer, blockProc, engine, dagIndex)
+	svc, err := gossip.NewService(stack, cfg.Galaxy, gdb, signer, blockProc, engine, dagIndex)
 	if err != nil {
 		utils.Fatalf("Failed to create the service: %v", err)
 	}
@@ -343,7 +343,7 @@ func startNode(ctx *cli.Context, stack *node.Node) {
 	events := make(chan accounts.WalletEvent, 16)
 	stack.AccountManager().Subscribe(events)
 
-	// Create a client to interact with local opera node.
+	// Create a client to interact with local galaxy node.
 	rpcClient, err := stack.Attach()
 	if err != nil {
 		utils.Fatalf("Failed to attach to self: %v", err)

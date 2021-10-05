@@ -11,7 +11,7 @@ import (
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/galaxy126/icicb-base/inter/idx"
 
-	opera "github.com/goicicb/galaxy"
+	galaxy "github.com/goicicb/galaxy"
 	"github.com/goicicb/galaxy/genesis"
 	"github.com/goicicb/galaxy/genesis/driver"
 	"github.com/goicicb/galaxy/genesis/driver/drivercall"
@@ -58,7 +58,7 @@ type DriverTxTransactor struct{}
 type DriverTxPreTransactor struct{}
 
 type DriverTxGenesisTransactor struct {
-	g opera.Genesis
+	g galaxy.Genesis
 }
 
 func NewDriverTxTransactor() *DriverTxTransactor {
@@ -69,7 +69,7 @@ func NewDriverTxPreTransactor() *DriverTxPreTransactor {
 	return &DriverTxPreTransactor{}
 }
 
-func NewDriverTxGenesisTransactor(g opera.Genesis) *DriverTxGenesisTransactor {
+func NewDriverTxGenesisTransactor(g galaxy.Genesis) *DriverTxGenesisTransactor {
 	return &DriverTxGenesisTransactor{
 		g: g,
 	}
@@ -137,13 +137,13 @@ func (p *DriverTxPreTransactor) PopInternalTxs(block blockproc.BlockCtx, bs bloc
 		for oldValIdx := idx.Validator(0); oldValIdx < es.Validators.Len(); oldValIdx++ {
 			info := bs.ValidatorStates[oldValIdx]
 			// forgive downtime if below BlockMissedSlack
-			missed := opera.BlocksMissed{
+			missed := galaxy.BlocksMissed{
 				BlocksNum: maxBlockIdx(block.Idx, info.LastBlock) - info.LastBlock,
 				Period:    inter.MaxTimestamp(block.Time, info.LastOnlineTime) - info.LastOnlineTime,
 			}
 			uptime := info.Uptime
 			if missed.BlocksNum <= es.Rules.Economy.BlockMissedSlack {
-				missed = opera.BlocksMissed{}
+				missed = galaxy.BlocksMissed{}
 				prevOnlineTime := inter.MaxTimestamp(info.LastOnlineTime, es.EpochStart)
 				uptime += inter.MaxTimestamp(block.Time, prevOnlineTime) - prevOnlineTime
 			}
@@ -251,7 +251,7 @@ func (p *DriverTxListener) OnNewLog(l *types.Log) {
 			return
 		}
 
-		p.bs.DirtyRules, err = opera.UpdateRules(p.bs.DirtyRules, diff)
+		p.bs.DirtyRules, err = galaxy.UpdateRules(p.bs.DirtyRules, diff)
 		if err != nil {
 			log.Warn("Network rules update error", "err", err)
 			return

@@ -517,7 +517,7 @@ func (p *peer) readStatus(network uint64, handshake *handshakeData, genesis comm
 // String implements fmt.Stringer.
 func (p *peer) String() string {
 	return fmt.Sprintf("Peer %s [%s]", p.id,
-		fmt.Sprintf("opera/%2d", p.version),
+		fmt.Sprintf("galaxy/%2d", p.version),
 	)
 }
 

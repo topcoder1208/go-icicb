@@ -12,7 +12,7 @@ import (
 	idx "github.com/galaxy126/icicb-base/inter/idx"
 	pos "github.com/galaxy126/icicb-base/inter/pos"
 	evmcore "github.com/goicicb/evmcore"
-	opera "github.com/goicicb/galaxy"
+	galaxy "github.com/goicicb/galaxy"
 	inter "github.com/goicicb/inter"
 	validatorpk "github.com/goicicb/inter/validatorpk"
 	vecmt "github.com/goicicb/vecmt"
@@ -212,10 +212,10 @@ func (mr *MockExternalMockRecorder) GetRecommendedGasPrice() *gomock.Call {
 }
 
 // GetRules mocks base method
-func (m *MockExternal) GetRules() opera.Rules {
+func (m *MockExternal) GetRules() galaxy.Rules {
 	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "GetRules")
-	ret0, _ := ret[0].(opera.Rules)
+	ret0, _ := ret[0].(galaxy.Rules)
 	return ret0
 }
 

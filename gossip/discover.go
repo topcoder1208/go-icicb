@@ -35,10 +35,10 @@ type enrEntry struct {
 
 // ENRKey implements enr.Entry.
 func (e enrEntry) ENRKey() string {
-	return "opera"
+	return "galaxy"
 }
 
-// StartENRUpdater starts the `opera` ENR updater loop, which listens for chain
+// StartENRUpdater starts the `galaxy` ENR updater loop, which listens for chain
 // head events and updates the requested node record whenever a fork is passed.
 func StartENRUpdater(svc *Service, ln *enode.LocalNode) {
 	var newHead = make(chan evmcore.ChainHeadNotify, 10)

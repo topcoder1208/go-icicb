@@ -8,7 +8,7 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/galaxy126/icicb-base/inter/idx"
 
-	opera "github.com/goicicb/galaxy"
+	galaxy "github.com/goicicb/galaxy"
 	"github.com/goicicb/galaxy/genesis"
 	"github.com/goicicb/galaxy/genesis/gpos"
 	"github.com/goicicb/inter"
@@ -33,7 +33,7 @@ func SealEpochValidators(_validators []idx.ValidatorID) []byte {
 }
 
 type ValidatorEpochMetric struct {
-	Missed          opera.BlocksMissed
+	Missed          galaxy.BlocksMissed
 	Uptime          inter.Timestamp
 	OriginatedTxFee *big.Int
 }

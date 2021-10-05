@@ -13,7 +13,7 @@ import (
 	"github.com/galaxy126/icicb-base/inter/pos"
 
 	"github.com/goicicb/evmcore"
-	opera "github.com/goicicb/galaxy"
+	galaxy "github.com/goicicb/galaxy"
 	"github.com/goicicb/inter"
 	"github.com/goicicb/valkeystore"
 	"github.com/goicicb/vecmt"
@@ -62,7 +62,7 @@ type Reader interface {
 	GetLastEvent(epoch idx.Epoch, from idx.ValidatorID) *hash.Event
 	GetHeads(idx.Epoch) hash.Events
 	GetGenesisTime() inter.Timestamp
-	GetRules() opera.Rules
+	GetRules() galaxy.Rules
 	GetRecommendedGasPrice() *big.Int
 }
 

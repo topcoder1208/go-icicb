@@ -35,7 +35,7 @@ glide.lock
 *.zip
 *.exe
 
-# opera project specific
+# galaxy project specific
 scripts/certs
 scripts/nodes
 scripts/peers.json

@@ -41,8 +41,8 @@ func BenchmarkFlushDBs(b *testing.B) {
 			return nil
 		},
 	}, Configs{
-		Opera:         gossip.DefaultConfig(cachescale.Identity),
-		OperaStore:    gossip.DefaultStoreConfig(cachescale.Identity),
+		Galaxy:        gossip.DefaultConfig(cachescale.Identity),
+		GalaxyStore:   gossip.DefaultStoreConfig(cachescale.Identity),
 		Lachesis:      abft.DefaultConfig(),
 		LachesisStore: abft.DefaultStoreConfig(cachescale.Identity),
 		VectorClock:   vecmt.DefaultConfig(cachescale.Identity),

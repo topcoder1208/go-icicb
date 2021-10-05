@@ -24,7 +24,7 @@ import (
 
 	"github.com/galaxy126/icicb-base/inter/idx"
 
-	opera "github.com/goicicb/galaxy"
+	galaxy "github.com/goicicb/galaxy"
 	"github.com/goicicb/utils/piecefunc"
 
 	"github.com/ethereum/go-ethereum/log"
@@ -50,8 +50,8 @@ type Config struct {
 type Reader interface {
 	GetLatestBlockIndex() idx.Block
 	TotalGasPowerLeft() uint64
-	GetRules() opera.Rules
-	GetPendingRules() opera.Rules
+	GetRules() galaxy.Rules
+	GetPendingRules() galaxy.Rules
 }
 
 // Oracle recommends gas prices based on the content of recent

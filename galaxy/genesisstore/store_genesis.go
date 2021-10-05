@@ -12,7 +12,7 @@ import (
 	"github.com/galaxy126/icicb-base/inter/idx"
 	"github.com/galaxy126/icicb-base/kvdb"
 
-	opera "github.com/goicicb/galaxy"
+	galaxy "github.com/goicicb/galaxy"
 	"github.com/goicicb/galaxy/genesis"
 	"github.com/goicicb/galaxy/genesis/gpos"
 	"github.com/goicicb/inter"
@@ -132,18 +132,18 @@ func (s *Store) SetMetadata(metadata Metadata) {
 	s.rlp.Set(s.table.Metadata, []byte("m"), &metadata)
 }
 
-func (s *Store) GetRules() opera.Rules {
-	cfg := s.rlp.Get(s.table.Rules, []byte("c"), &opera.Rules{}).(*opera.Rules)
+func (s *Store) GetRules() galaxy.Rules {
+	cfg := s.rlp.Get(s.table.Rules, []byte("c"), &galaxy.Rules{}).(*galaxy.Rules)
 	return *cfg
 }
 
-func (s *Store) SetRules(cfg opera.Rules) {
+func (s *Store) SetRules(cfg galaxy.Rules) {
 	s.rlp.Set(s.table.Rules, []byte("c"), &cfg)
 }
 
-func (s *Store) GetGenesis() opera.Genesis {
+func (s *Store) GetGenesis() galaxy.Genesis {
 	meatadata := s.GetMetadata()
-	return opera.Genesis{
+	return galaxy.Genesis{
 		Accounts:      s.EvmAccounts(),
 		Storage:       s.EvmStorage(),
 		Delegations:   s.Delegations(),

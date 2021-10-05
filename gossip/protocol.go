@@ -17,7 +17,7 @@ const (
 )
 
 // ProtocolName is the official short name of the protocol used during capability negotiation.
-const ProtocolName = "opera"
+const ProtocolName = "galaxy"
 
 // ProtocolVersions are the supported versions of the protocol (first is primary).
 var ProtocolVersions = []uint{ProtocolVersion}

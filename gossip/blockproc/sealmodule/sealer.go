@@ -10,39 +10,39 @@ import (
 	"github.com/goicicb/gossip/blockproc"
 )
 
-type OperaEpochsSealerModule struct{}
+type GalaxyEpochsSealerModule struct{}
 
-func New() *OperaEpochsSealerModule {
-	return &OperaEpochsSealerModule{}
+func New() *GalaxyEpochsSealerModule {
+	return &GalaxyEpochsSealerModule{}
 }
 
-func (m *OperaEpochsSealerModule) Start(block blockproc.BlockCtx, bs blockproc.BlockState, es blockproc.EpochState) blockproc.SealerProcessor {
-	return &OperaEpochsSealer{
+func (m *GalaxyEpochsSealerModule) Start(block blockproc.BlockCtx, bs blockproc.BlockState, es blockproc.EpochState) blockproc.SealerProcessor {
+	return &GalaxyEpochsSealer{
 		block: block,
 		es:    es,
 		bs:    bs,
 	}
 }
 
-type OperaEpochsSealer struct {
+type GalaxyEpochsSealer struct {
 	block blockproc.BlockCtx
 	es    blockproc.EpochState
 	bs    blockproc.BlockState
 }
 
-func (s *OperaEpochsSealer) EpochSealing() bool {
+func (s *GalaxyEpochsSealer) EpochSealing() bool {
 	sealEpoch := s.bs.EpochGas >= s.es.Rules.Epochs.MaxEpochGas
 	sealEpoch = sealEpoch || (s.block.Time-s.es.EpochStart) >= s.es.Rules.Epochs.MaxEpochDuration
 	sealEpoch = sealEpoch || s.bs.AdvanceEpochs > 0
 	return sealEpoch || s.bs.EpochCheaters.Len() != 0
 }
 
-func (p *OperaEpochsSealer) Update(bs blockproc.BlockState, es blockproc.EpochState) {
+func (p *GalaxyEpochsSealer) Update(bs blockproc.BlockState, es blockproc.EpochState) {
 	p.bs, p.es = bs, es
 }
 
 // SealEpoch is called after pre-internal transactions are executed
-func (s *OperaEpochsSealer) SealEpoch() (blockproc.BlockState, blockproc.EpochState) {
+func (s *GalaxyEpochsSealer) SealEpoch() (blockproc.BlockState, blockproc.EpochState) {
 	// Select new validators
 	oldValidators := s.es.Validators
 	builder := pos.NewBigBuilder()

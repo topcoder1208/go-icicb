@@ -39,7 +39,7 @@ Note that exporting your key in unencrypted format is NOT supported.
 
 Keys are stored under <DATADIR>/keystore/validator.
 It is safe to transfer the entire directory or the individual keys therein
-between Opera nodes by simply copying.
+between Galaxy nodes by simply copying.
 
 Make sure you backup your keys regularly.`,
 		Subcommands: []cli.Command{
@@ -53,7 +53,7 @@ Make sure you backup your keys regularly.`,
 					utils.PasswordFileFlag,
 				},
 				Description: `
-    opera validator new
+    galaxy validator new
 
 Creates a new validator private key and prints the public key.
 
@@ -77,7 +77,7 @@ password to file or expose in any other way.
 				},
 				ArgsUsage: "<account address> <validator pubkey>",
 				Description: `
-    opera validator convert
+    galaxy validator convert
 
 Converts an account private key to a validator private key and saves in the validator keystore.
 `,

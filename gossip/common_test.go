@@ -23,7 +23,7 @@ import (
 	"github.com/galaxy126/icicb-base/utils/workers"
 
 	"github.com/goicicb/evmcore"
-	opera "github.com/goicicb/galaxy"
+	galaxy "github.com/goicicb/galaxy"
 	"github.com/goicicb/galaxy/genesis/gpos"
 	"github.com/goicicb/integration/makegenesis"
 	"github.com/goicicb/inter"
@@ -301,7 +301,7 @@ func (env *testEnv) callContract(
 	// about the transaction and calling mechanisms.
 	txContext := evmcore.NewEVMTxContext(msg)
 	context := evmcore.NewEVMBlockContext(block.Header(), env.GetEvmStateReader(), nil)
-	vmenv := vm.NewEVM(context, txContext, state, env.store.GetRules().EvmChainConfig(), opera.DefaultVMConfig)
+	vmenv := vm.NewEVM(context, txContext, state, env.store.GetRules().EvmChainConfig(), galaxy.DefaultVMConfig)
 	gaspool := new(evmcore.GasPool).AddGas(math.MaxUint64)
 	res, err := evmcore.NewStateTransition(vmenv, msg, gaspool).TransitionDb()
 
@@ -355,14 +355,14 @@ func (env *testEnv) SendTransaction(ctx context.Context, tx *types.Transaction) 
  *  bind.ContractFilterer interface
  */
 
-// FilterLogs executes a log filter operation, blocking during execution and
+// FilterLogs executes a log filter galaxytion, blocking during execution and
 // returning all the results in one batch.
 func (env *testEnv) FilterLogs(ctx context.Context, query ethereum.FilterQuery) ([]types.Log, error) {
 	panic("not implemented yet")
 	return nil, nil
 }
 
-// SubscribeFilterLogs creates a background log filtering operation, returning
+// SubscribeFilterLogs creates a background log filtering galaxytion, returning
 // a subscription immediately, which can be used to stream the found events.
 func (env *testEnv) SubscribeFilterLogs(ctx context.Context, query ethereum.FilterQuery, ch chan<- types.Log) (ethereum.Subscription, error) {
 	panic("not implemented yet")

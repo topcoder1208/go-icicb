@@ -238,7 +238,7 @@ func (st *StateTransition) TransitionDb() (*ExecutionResult, error) {
 	// 4. the purchased gas is enough to cover intrinsic usage
 	// 5. there is no overflow when calculating intrinsic gas
 
-	// Note: insufficient balance for **topmost** call isn't a consensus error in Opera, unlike Ethereum
+	// Note: insufficient balance for **topmost** call isn't a consensus error in Galaxy, unlike Ethereum
 	// Such transaction will revert and consume sender's gas
 
 	// Check clauses 1-3, buy gas if everything is correct

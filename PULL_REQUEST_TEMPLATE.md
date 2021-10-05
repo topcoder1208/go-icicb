@@ -1,4 +1,4 @@
-Please check if what you want to add to `go-opera` list meets [quality standards](https://github.com/goicicb/blob/master/CONTRIBUTING.md#quality-standard) before sending pull request.
+Please check if what you want to add to `go-galaxy` list meets [quality standards](https://github.com/goicicb/blob/master/CONTRIBUTING.md#quality-standard) before sending pull request.
 
 **Please provide package links to:**
 

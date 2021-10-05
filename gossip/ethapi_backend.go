@@ -24,7 +24,7 @@ import (
 
 	"github.com/goicicb/ethapi"
 	"github.com/goicicb/evmcore"
-	opera "github.com/goicicb/galaxy"
+	galaxy "github.com/goicicb/galaxy"
 	"github.com/goicicb/gossip/blockproc"
 	"github.com/goicicb/gossip/sfcapi"
 	"github.com/goicicb/inter"
@@ -302,7 +302,7 @@ func (b *EthAPIBackend) GetEVM(ctx context.Context, msg evmcore.Message, state *
 	vmError := func() error { return nil }
 
 	if vmConfig == nil {
-		vmConfig = &opera.DefaultVMConfig
+		vmConfig = &galaxy.DefaultVMConfig
 	}
 	txContext := evmcore.NewEVMTxContext(msg)
 	context := evmcore.NewEVMBlockContext(header, b.state, nil)

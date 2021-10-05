@@ -49,7 +49,7 @@ type RulesRLP struct {
 	Upgrades Upgrades `rlp:"-"`
 }
 
-// Rules describes opera net.
+// Rules describes galaxy net.
 // Note keep track of all the non-copiable variables in Copy()
 type Rules RulesRLP
 
