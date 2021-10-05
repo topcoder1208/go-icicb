@@ -16,7 +16,7 @@ fuzzing/
 # Build output
 build
 dist
-
+TEST.md
 # Dependencies
 vendor
 glide.lock
