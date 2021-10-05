@@ -90,7 +90,7 @@ var (
 		Value: gossip.DefaultConfig(cachescale.Identity).RPCTxFeeCap,
 	}
 
-	AllowedOperaGenesisHashes = map[uint64]hash.Hash{
+	AllowedGalaxyGenesisHashes = map[uint64]hash.Hash{
 		galaxy.MainNetworkID: hash.HexToHash("0x83ff52f58d0213d67f079db5a63628b715aca0cc8d5d5e9f21e66ef82500063a"),
 		galaxy.TestNetworkID: hash.HexToHash("0x772308e3fbd2e245533d45037cd32a133adc4341ada465fa4d1d6d56ae4a542a"),
 	}
@@ -118,8 +118,8 @@ var tomlSettings = toml.Config{
 
 type config struct {
 	Node          node.Config
-	Opera         gossip.Config
-	OperaStore    gossip.StoreConfig
+	Galaxy        gossip.Config
+	GalaxyStore   gossip.StoreConfig
 	Lachesis      abft.Config
 	LachesisStore abft.StoreConfig
 	VectorClock   vecmt.IndexConfig
@@ -127,12 +127,12 @@ type config struct {
 
 func (c *config) AppConfigs() integration.Configs {
 	return integration.Configs{
-		Opera:          c.Opera,
-		OperaStore:     c.OperaStore,
+		Galaxy:         c.Galaxy,
+		GalaxyStore:    c.GalaxyStore,
 		Lachesis:       c.Lachesis,
 		LachesisStore:  c.LachesisStore,
 		VectorClock:    c.VectorClock,
-		AllowedGenesis: AllowedOperaGenesisHashes,
+		AllowedGenesis: AllowedGalaxyGenesisHashes,
 	}
 }
 
@@ -342,8 +342,8 @@ func mayMakeAllConfigs(ctx *cli.Context) (*config, error) {
 	cacheRatio := cacheScaler(ctx)
 	cfg := config{
 		Node:          defaultNodeConfig(),
-		Opera:         gossip.DefaultConfig(cacheRatio),
-		OperaStore:    gossip.DefaultStoreConfig(cacheRatio),
+		Galaxy:        gossip.DefaultConfig(cacheRatio),
+		GalaxyStore:   gossip.DefaultStoreConfig(cacheRatio),
 		Lachesis:      abft.DefaultConfig(),
 		LachesisStore: abft.DefaultStoreConfig(cacheRatio),
 		VectorClock:   vecmt.DefaultConfig(cacheRatio),
@@ -351,7 +351,7 @@ func mayMakeAllConfigs(ctx *cli.Context) (*config, error) {
 
 	if ctx.GlobalIsSet(FakeNetFlag.Name) {
 		_, num, _ := parseFakeGen(ctx.GlobalString(FakeNetFlag.Name))
-		cfg.Opera = gossip.FakeConfig(num, cacheRatio)
+		cfg.Galaxy = gossip.FakeConfig(num, cacheRatio)
 	}
 
 	// Load config file (medium priority)
@@ -363,20 +363,20 @@ func mayMakeAllConfigs(ctx *cli.Context) (*config, error) {
 
 	// Apply flags (high priority)
 	var err error
-	cfg.Opera, err = gossipConfigWithFlags(ctx, cfg.Opera)
+	cfg.Galaxy, err = gossipConfigWithFlags(ctx, cfg.Galaxy)
 	if err != nil {
 		return nil, err
 	}
-	cfg.OperaStore, err = gossipStoreConfigWithFlags(ctx, cfg.OperaStore)
+	cfg.GalaxyStore, err = gossipStoreConfigWithFlags(ctx, cfg.GalaxyStore)
 	if err != nil {
 		return nil, err
 	}
 	cfg.Node = nodeConfigWithFlags(ctx, cfg.Node)
-	if cfg.Opera.Emitter.Validator.ID != 0 && len(cfg.Opera.Emitter.PrevEmittedEventFile.Path) == 0 {
-		cfg.Opera.Emitter.PrevEmittedEventFile.Path = cfg.Node.ResolvePath(path.Join("emitter", fmt.Sprintf("last-%d", cfg.Opera.Emitter.Validator.ID)))
+	if cfg.Galaxy.Emitter.Validator.ID != 0 && len(cfg.Galaxy.Emitter.PrevEmittedEventFile.Path) == 0 {
+		cfg.Galaxy.Emitter.PrevEmittedEventFile.Path = cfg.Node.ResolvePath(path.Join("emitter", fmt.Sprintf("last-%d", cfg.Galaxy.Emitter.Validator.ID)))
 	}
 
-	if err := cfg.Opera.Validate(); err != nil {
+	if err := cfg.Galaxy.Validate(); err != nil {
 		return nil, err
 	}
 
