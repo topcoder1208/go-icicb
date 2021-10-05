@@ -6,12 +6,12 @@ set -e
 
 echo -e "\nStart $N nodes:\n"
 
-go build -o ../build/demo_opera ../cmd/opera
+go build -o ../build/demo_galaxy ../cmd/galaxy
 
 rm -f ./transactions.rlp
 for ((i=0;i<$N;i+=1))
 do
-    DATADIR="${PWD}/opera$i.datadir"
+    DATADIR="${PWD}/galaxy$i.datadir"
     rm -fr ${DATADIR}
     mkdir -p ${DATADIR}
 
@@ -19,7 +19,7 @@ do
     RPCP=$(($RPCP_BASE+$i))
     WSP=$(($WSP_BASE+$i))
     ACC=$(($i+1))
-    (../build/demo_opera \
+    (../build/demo_galaxy \
 	--datadir=${DATADIR} \
 	--fakenet=${ACC}/$N \
 	--port=${PORT} \
@@ -43,7 +43,7 @@ attach_and_exec() {
             echo "  - attempt ${attempt}: " >&2
         fi;
 
-        res=$(../build/demo_opera --exec "${CMD}" attach http://127.0.0.1:${RPCP} 2> /dev/null)
+        res=$(../build/demo_galaxy --exec "${CMD}" attach http://127.0.0.1:${RPCP} 2> /dev/null)
         if [ $? -eq 0 ]
         then
             #echo "success" >&2

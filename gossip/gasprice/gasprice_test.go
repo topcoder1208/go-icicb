@@ -7,14 +7,14 @@ import (
 	"github.com/galaxy126/icicb-base/inter/idx"
 	"github.com/stretchr/testify/require"
 
-	opera "github.com/goicicb/galaxy"
+	galaxy "github.com/goicicb/galaxy"
 )
 
 type TestBackend struct {
 	block             idx.Block
 	totalGasPowerLeft uint64
-	rules             opera.Rules
-	pendingRules      opera.Rules
+	rules             galaxy.Rules
+	pendingRules      galaxy.Rules
 }
 
 func (t TestBackend) GetLatestBlockIndex() idx.Block {
@@ -25,11 +25,11 @@ func (t TestBackend) TotalGasPowerLeft() uint64 {
 	return t.totalGasPowerLeft
 }
 
-func (t TestBackend) GetRules() opera.Rules {
+func (t TestBackend) GetRules() galaxy.Rules {
 	return t.rules
 }
 
-func (t TestBackend) GetPendingRules() opera.Rules {
+func (t TestBackend) GetPendingRules() galaxy.Rules {
 	return t.pendingRules
 }
 
@@ -64,8 +64,8 @@ func TestSuggestPrice(t *testing.T) {
 	backend := &TestBackend{
 		block:             1,
 		totalGasPowerLeft: 0,
-		rules:             opera.FakeNetRules(),
-		pendingRules:      opera.FakeNetRules(),
+		rules:             galaxy.FakeNetRules(),
+		pendingRules:      galaxy.FakeNetRules(),
 	}
 
 	gpo := NewOracle(backend, Config{})

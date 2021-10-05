@@ -2,7 +2,7 @@ FROM golang:1.14-alpine as builder
 
 RUN apk add --no-cache make gcc musl-dev linux-headers git
 
-WORKDIR /go/go-opera
+WORKDIR /go/go-galaxy
 COPY . .
 
 ARG GOPROXY=direct
@@ -12,9 +12,9 @@ RUN export GIT_COMMIT=$(git rev-list -1 HEAD) && \
     export GIT_DATE=$(git log -1 --date=short --pretty=format:%ct) && \
     export CGO_ENABLED=1 && \
     go build \
-	-ldflags "-s -w -X github.com/goicicb/cmd/opera/launcher.gitCommit=$GIT_COMMIT -X github.com/goicicb/cmd/opera/launcher.gitDate=$GIT_DATE" \
-	-o /tmp/opera \
-	./cmd/opera
+	-ldflags "-s -w -X github.com/goicicb/cmd/galaxy/launcher.gitCommit=$GIT_COMMIT -X github.com/goicicb/cmd/galaxy/launcher.gitDate=$GIT_DATE" \
+	-o /tmp/galaxy \
+	./cmd/galaxy
 
 
 
@@ -22,8 +22,8 @@ FROM alpine:latest
 
 RUN apk add --no-cache ca-certificates
 
-COPY --from=builder /tmp/opera /
+COPY --from=builder /tmp/galaxy /
 
 EXPOSE 5050 18545 18546 18547 19090
 
-ENTRYPOINT ["/opera"]
+ENTRYPOINT ["/galaxy"]

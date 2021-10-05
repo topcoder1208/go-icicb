@@ -6,7 +6,7 @@ import (
 	"github.com/syndtr/goleveldb/leveldb/opt"
 
 	"github.com/goicicb/evmcore"
-	opera "github.com/goicicb/galaxy"
+	galaxy "github.com/goicicb/galaxy"
 )
 
 func (s *Store) applyRawEvmItems(db kvdb.Iteratee) (err error) {
@@ -31,7 +31,7 @@ func (s *Store) applyRawEvmItems(db kvdb.Iteratee) (err error) {
 }
 
 // ApplyGenesis writes initial state.
-func (s *Store) ApplyGenesis(g opera.Genesis, startingRoot hash.Hash) (evmBlock *evmcore.EvmBlock, err error) {
+func (s *Store) ApplyGenesis(g galaxy.Genesis, startingRoot hash.Hash) (evmBlock *evmcore.EvmBlock, err error) {
 	// apply raw EVM storage
 	err = s.applyRawEvmItems(g.RawEvmItems)
 	if err != nil {

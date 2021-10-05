@@ -33,7 +33,7 @@ func (s *Store) migrateData() error {
 
 func (s *Store) migrations() *migration.Migration {
 	return migration.
-		Begin("opera-gossip-store").
+		Begin("galaxy-gossip-store").
 		Next("used gas recovery", s.recoverUsedGas).
 		Next("tx hashes recovery", s.recoverTxHashes).
 		Next("DAG heads recovery", s.recoverHeadsStorage).

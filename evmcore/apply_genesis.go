@@ -24,13 +24,13 @@ import (
 	"github.com/ethereum/go-ethereum/core/state"
 	"github.com/ethereum/go-ethereum/log"
 
-	opera "github.com/goicicb/galaxy"
+	galaxy "github.com/goicicb/galaxy"
 	"github.com/goicicb/galaxy/genesis"
 	"github.com/goicicb/inter"
 )
 
 // ApplyGenesis writes or updates the genesis block in db.
-func ApplyGenesis(statedb *state.StateDB, g opera.Genesis, maxMemoryUsage int) (*EvmBlock, error) {
+func ApplyGenesis(statedb *state.StateDB, g galaxy.Genesis, maxMemoryUsage int) (*EvmBlock, error) {
 	mem := 0
 	capEvm := func(usage int) {
 		mem += usage
@@ -83,7 +83,7 @@ func flush(statedb *state.StateDB, clean bool) (root common.Hash, err error) {
 }
 
 // genesisBlock makes genesis block with pretty hash.
-func genesisBlock(g opera.Genesis, root common.Hash) *EvmBlock {
+func genesisBlock(g galaxy.Genesis, root common.Hash) *EvmBlock {
 	block := &EvmBlock{
 		EvmHeader: EvmHeader{
 			Number:   big.NewInt(0),
@@ -98,7 +98,7 @@ func genesisBlock(g opera.Genesis, root common.Hash) *EvmBlock {
 }
 
 // MustApplyGenesis writes the genesis block and state to db, panicking on error.
-func MustApplyGenesis(g opera.Genesis, statedb *state.StateDB, maxMemoryUsage int) *EvmBlock {
+func MustApplyGenesis(g galaxy.Genesis, statedb *state.StateDB, maxMemoryUsage int) *EvmBlock {
 	block, err := ApplyGenesis(statedb, g, maxMemoryUsage)
 	if err != nil {
 		log.Crit("ApplyGenesis", "err", err)

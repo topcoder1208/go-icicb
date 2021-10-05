@@ -88,7 +88,7 @@ func exec(t *testing.T, args ...string) *testcli {
 		}()
 	}
 
-	// Boot "opera". This actually runs the test binary but the TestMain
+	// Boot "galaxy". This actually runs the test binary but the TestMain
 	// function will prevent any tests from running.
 	tt.Run("galaxy-test", args...)
 

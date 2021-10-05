@@ -10,7 +10,7 @@ import (
 	"github.com/ethereum/go-ethereum/log"
 
 	"github.com/goicicb/evmcore"
-	opera "github.com/goicicb/galaxy"
+	galaxy "github.com/goicicb/galaxy"
 	"github.com/goicicb/gossip/blockproc"
 	"github.com/goicicb/inter"
 	"github.com/goicicb/utils"
@@ -22,12 +22,12 @@ func New() *EVMModule {
 	return &EVMModule{}
 }
 
-func (p *EVMModule) Start(block blockproc.BlockCtx, statedb *state.StateDB, reader evmcore.DummyChain, onNewLog func(*types.Log), net opera.Rules) blockproc.EVMProcessor {
+func (p *EVMModule) Start(block blockproc.BlockCtx, statedb *state.StateDB, reader evmcore.DummyChain, onNewLog func(*types.Log), net galaxy.Rules) blockproc.EVMProcessor {
 	var prevBlockHash common.Hash
 	if block.Idx != 0 {
 		prevBlockHash = reader.GetHeader(common.Hash{}, uint64(block.Idx-1)).Hash
 	}
-	return &OperaEVMProcessor{
+	return &GalaxyEVMProcessor{
 		block:         block,
 		reader:        reader,
 		statedb:       statedb,
@@ -38,12 +38,12 @@ func (p *EVMModule) Start(block blockproc.BlockCtx, statedb *state.StateDB, read
 	}
 }
 
-type OperaEVMProcessor struct {
+type GalaxyEVMProcessor struct {
 	block    blockproc.BlockCtx
 	reader   evmcore.DummyChain
 	statedb  *state.StateDB
 	onNewLog func(*types.Log)
-	net      opera.Rules
+	net      galaxy.Rules
 
 	blockIdx      *big.Int
 	prevBlockHash common.Hash
@@ -55,7 +55,7 @@ type OperaEVMProcessor struct {
 	receipts    types.Receipts
 }
 
-func (p *OperaEVMProcessor) evmBlockWith(txs types.Transactions) *evmcore.EvmBlock {
+func (p *GalaxyEVMProcessor) evmBlockWith(txs types.Transactions) *evmcore.EvmBlock {
 	h := &evmcore.EvmHeader{
 		Number:     p.blockIdx,
 		Hash:       common.Hash(p.block.Atropos),
@@ -70,12 +70,12 @@ func (p *OperaEVMProcessor) evmBlockWith(txs types.Transactions) *evmcore.EvmBlo
 	return evmcore.NewEvmBlock(h, txs)
 }
 
-func (p *OperaEVMProcessor) Execute(txs types.Transactions, internal bool) types.Receipts {
+func (p *GalaxyEVMProcessor) Execute(txs types.Transactions, internal bool) types.Receipts {
 	evmProcessor := evmcore.NewStateProcessor(p.net.EvmChainConfig(), p.reader)
 
 	// Process txs
 	evmBlock := p.evmBlockWith(txs)
-	receipts, _, skipped, err := evmProcessor.Process(evmBlock, p.statedb, opera.DefaultVMConfig, &p.gasUsed, internal, func(log *types.Log, _ *state.StateDB) {
+	receipts, _, skipped, err := evmProcessor.Process(evmBlock, p.statedb, galaxy.DefaultVMConfig, &p.gasUsed, internal, func(log *types.Log, _ *state.StateDB) {
 		p.onNewLog(log)
 	})
 	if err != nil {
@@ -96,7 +96,7 @@ func (p *OperaEVMProcessor) Execute(txs types.Transactions, internal bool) types
 	return receipts
 }
 
-func (p *OperaEVMProcessor) Finalize() (evmBlock *evmcore.EvmBlock, skippedTxs []uint32, receipts types.Receipts) {
+func (p *GalaxyEVMProcessor) Finalize() (evmBlock *evmcore.EvmBlock, skippedTxs []uint32, receipts types.Receipts) {
 	evmBlock = p.evmBlockWith(
 		// Filter skipped transactions. Receipts are filtered already
 		inter.FilterSkippedTxs(p.incomingTxs, p.skippedTxs),

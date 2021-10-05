@@ -16,7 +16,7 @@ import (
 	"github.com/galaxy126/icicb-base/kvdb"
 	"github.com/galaxy126/icicb-base/kvdb/flushable"
 
-	opera "github.com/goicicb/galaxy"
+	galaxy "github.com/goicicb/galaxy"
 	"github.com/goicicb/galaxy/genesisstore"
 	"github.com/goicicb/gossip"
 	"github.com/goicicb/utils/adapters/vecmt2dagidx"
@@ -75,12 +75,12 @@ func getStores(producer kvdb.FlushableDBProducer, cfg Configs) (*gossip.Store, *
 	return gdb, cdb, genesisStore
 }
 
-func rawApplyGenesis(gdb *gossip.Store, cdb *abft.Store, g opera.Genesis, cfg Configs) error {
+func rawApplyGenesis(gdb *gossip.Store, cdb *abft.Store, g galaxy.Genesis, cfg Configs) error {
 	_, _, _, err := rawMakeEngine(gdb, cdb, g, cfg, true)
 	return err
 }
 
-func rawMakeEngine(gdb *gossip.Store, cdb *abft.Store, g opera.Genesis, cfg Configs, applyGenesis bool) (*abft.Lachesis, *vecmt.Index, gossip.BlockProc, error) {
+func rawMakeEngine(gdb *gossip.Store, cdb *abft.Store, g galaxy.Genesis, cfg Configs, applyGenesis bool) (*abft.Lachesis, *vecmt.Index, gossip.BlockProc, error) {
 	blockProc := gossip.DefaultBlockProc(g)
 
 	if applyGenesis {

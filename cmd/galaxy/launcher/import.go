@@ -98,10 +98,10 @@ func importEvents(ctx *cli.Context) error {
 	// avoid P2P interaction, API calls and events emitting
 	genesis := getGalaxyGenesis(ctx)
 	cfg := makeAllConfigs(ctx)
-	cfg.Opera.Protocol.EventsSemaphoreLimit.Size = math.MaxUint32
-	cfg.Opera.Protocol.EventsSemaphoreLimit.Num = math.MaxUint32
-	cfg.Opera.Emitter.Validator = emitter.ValidatorConfig{}
-	cfg.Opera.TxPool.Journal = ""
+	cfg.Galaxy.Protocol.EventsSemaphoreLimit.Size = math.MaxUint32
+	cfg.Galaxy.Protocol.EventsSemaphoreLimit.Num = math.MaxUint32
+	cfg.Galaxy.Emitter.Validator = emitter.ValidatorConfig{}
+	cfg.Galaxy.TxPool.Journal = ""
 	cfg.Node.IPCPath = ""
 	cfg.Node.HTTPHost = ""
 	cfg.Node.WSHost = ""

@@ -7,7 +7,7 @@ import (
 	base "github.com/galaxy126/icicb-base/eventcheck/epochcheck"
 	"github.com/galaxy126/icicb-base/inter/idx"
 
-	opera "github.com/goicicb/galaxy"
+	galaxy "github.com/goicicb/galaxy"
 	"github.com/goicicb/inter"
 )
 
@@ -25,7 +25,7 @@ var (
 // Reader returns currents epoch and its validators group.
 type Reader interface {
 	base.Reader
-	GetEpochRules() (opera.Rules, idx.Epoch)
+	GetEpochRules() (galaxy.Rules, idx.Epoch)
 }
 
 // Checker which require only current epoch info
@@ -41,7 +41,7 @@ func New(reader Reader) *Checker {
 	}
 }
 
-func CalcGasPowerUsed(e inter.EventPayloadI, rules opera.Rules) uint64 {
+func CalcGasPowerUsed(e inter.EventPayloadI, rules galaxy.Rules) uint64 {
 	txsGas := uint64(0)
 	for _, tx := range e.Txs() {
 		txsGas += tx.Gas()
@@ -56,7 +56,7 @@ func CalcGasPowerUsed(e inter.EventPayloadI, rules opera.Rules) uint64 {
 	return txsGas + parentsGas + extraGas + rules.Economy.Gas.EventGas
 }
 
-func (v *Checker) checkGas(e inter.EventPayloadI, rules opera.Rules) error {
+func (v *Checker) checkGas(e inter.EventPayloadI, rules galaxy.Rules) error {
 	if e.GasPowerUsed() > rules.Economy.Gas.MaxEventGas {
 		return ErrTooBigGasUsed
 	}
@@ -66,7 +66,7 @@ func (v *Checker) checkGas(e inter.EventPayloadI, rules opera.Rules) error {
 	return nil
 }
 
-func CheckTxs(txs types.Transactions, rules opera.Rules) error {
+func CheckTxs(txs types.Transactions, rules galaxy.Rules) error {
 	maxType := uint8(0)
 	if rules.Upgrades.Berlin {
 		maxType++

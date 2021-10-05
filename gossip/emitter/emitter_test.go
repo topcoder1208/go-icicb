@@ -13,7 +13,7 @@ import (
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/require"
 
-	opera "github.com/goicicb/galaxy"
+	galaxy "github.com/goicicb/galaxy"
 	"github.com/goicicb/gossip/emitter/mock"
 	"github.com/goicicb/integration/makegenesis"
 	"github.com/goicicb/inter"
@@ -61,7 +61,7 @@ func TestEmitter(t *testing.T) {
 
 	t.Run("init", func(t *testing.T) {
 		external.EXPECT().GetRules().
-			Return(opera.FakeNetRules()).
+			Return(galaxy.FakeNetRules()).
 			AnyTimes()
 
 		external.EXPECT().GetEpochValidators().

@@ -7,7 +7,7 @@ import (
 	"github.com/ethereum/go-ethereum/params"
 	"github.com/galaxy126/icicb-base/inter/idx"
 
-	opera "github.com/goicicb/galaxy"
+	galaxy "github.com/goicicb/galaxy"
 	"github.com/goicicb/inter/validatorpk"
 )
 
@@ -69,9 +69,9 @@ func DefaultConfig() Config {
 
 		MaxParents: 0,
 
-		LimitedTpsThreshold: opera.DefaultEventGas * 120,
-		NoTxsThreshold:      opera.DefaultEventGas * 30,
-		EmergencyThreshold:  opera.DefaultEventGas * 5,
+		LimitedTpsThreshold: galaxy.DefaultEventGas * 120,
+		NoTxsThreshold:      galaxy.DefaultEventGas * 30,
+		EmergencyThreshold:  galaxy.DefaultEventGas * 5,
 
 		TxsCacheInvalidation: 200 * time.Millisecond,
 	}

@@ -342,7 +342,7 @@ func (pool *TxPool) loop() {
 	defer journal.Stop()
 
 	for {
-		// Opera-specific gas price updates
+		// Galaxy-specific gas price updates
 		if time.Since(pool.lastGasPriceUpdate) > time.Second {
 			newPrice := pool.chain.RecommendedMinGasPrice()
 			if newPrice != nil {
@@ -606,7 +606,7 @@ func (pool *TxPool) validateTx(tx *types.Transaction, local bool) error {
 	if tx.Gas() < intrGas {
 		return ErrIntrinsicGas
 	}
-	// Ensure Opera-specific hard bounds
+	// Ensure Galaxy-specific hard bounds
 	if pool.chain.MinGasPrice().Cmp(tx.GasPrice()) > 0 {
 		return ErrUnderpriced
 	}
@@ -1169,7 +1169,7 @@ func (pool *TxPool) runReorg(done chan struct{}, reset *txpoolResetRequest, dirt
 // reset retrieves the current state of the blockchain and ensures the content
 // of the transaction pool is valid with regard to the chain state.
 func (pool *TxPool) reset(oldHead, newHead *EvmHeader) {
-	// update chain config (Opera-specific)
+	// update chain config (Galaxy-specific)
 	if newConfig := pool.chain.Config(); newConfig != nil {
 		pool.chainconfig = newConfig
 	}
