@@ -10,8 +10,8 @@
 ```
 
 ### Running testnet
-./build/opera --metrics  --cache 64000 --genesis
-$HOME/fantom/mainnet.g --nousb --http --http.addr '0.0.0.0' --http.port 8545 --http.corsdomain "*" --http.vhosts "*" --ws --ws.addr '0.0.0.0' --ws.port 8546  --ws.origins '0.0.0.0' --graphql --graphql.corsdomain '*' --graphql.vhosts '*' --datadir "$HOME/fantom/node" --http.api "net,eth,web3" --ws.api "net,eth,web3"
+./build/galaxy --metrics  --cache 64000 --genesis
+$HOME/icicb/mainnet.g --nousb --http --http.addr '0.0.0.0' --http.port 8545 --http.corsdomain "*" --http.vhosts "*" --ws --ws.addr '0.0.0.0' --ws.port 8546  --ws.origins '0.0.0.0' --graphql --graphql.corsdomain '*' --graphql.vhosts '*' --datadir "$HOME/icicb/node" --http.api "net,eth,web3" --ws.api "net,eth,web3"
 
 
 ### testing

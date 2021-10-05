@@ -52,18 +52,18 @@ type ValidatorAccount struct {
 }
 
 func MakeGenesisStore() *genesisstore.Store {
-	var balance *big.Int = futils.ToIcicb(1000000)
-	stake := balance // *big.Int
+	var balance *big.Int = futils.ToIcicb(1e8)
+	stake := futils.ToIcicb(1e6) // *big.Int
 	genStore := genesisstore.NewMemStore()
 	genStore.SetRules(galaxy.MainNetRules())
 	var accounts = []ValidatorAccount{
 		{
-			address:   "0xC5df89579D7A2f85b8a4b1a6395083da394Bba92",
-			validator: "0xc004aa0713a0bc43226ab1f19e9547afc0d4b13fde317142436072d4d959621dc61a1d6ac185fb87ffe81d578c2a89a79e151a77ae71f31b8281e1c690c0f625dcf7",
+			address:   "0x3c85D69dCC0Cc8471089889D6846E36c3E1baD65",
+			validator: "0xc0042d618582085fcbe8a2222a58b2be14a5a051a93ca35fd07bcb492e63a7a2f04932e4b854ae4753ba429eb5718ac194e2e23ea6f549fb90f0517e17ee34b1ac73",
 		},
 		{
-			address:   "0x82bC5Cd564EA21642910796aE7Ec675772AE642F",
-			validator: "0xc004398d3a0ee4514dfd111d22a4a54137b2ea79dc179f575f5b3dfe66ccc3348559a28af9ed7c075e3b93a5ff338dc657606104b3030ebcd95d7ad52fa62199553f",
+			address:   "0x977a6B645d98CF58f2b02a17E1E51D7228D091e7",
+			validator: "0xc004507ab1e6348050324b122f14710aa3f5699d578c07b3a32f511852de8422b776f283bbec1d1f74aac88e822fa664af35b266661ecaa6e2642990400c4d91599c",
 		},
 	}
 	num := len(accounts)
@@ -76,6 +76,7 @@ func MakeGenesisStore() *genesisstore.Store {
 	for i := 1; i <= num; i++ {
 		addr := common.HexToAddress(accounts[i-1].address)
 		pubkeyraw := common.Hex2Bytes(accounts[i-1].validator)
+
 		// addr1, _ := hex.DecodeString(accounts[i-1].address)
 		//
 
@@ -88,12 +89,12 @@ func MakeGenesisStore() *genesisstore.Store {
 		// addr := crypto.PubkeyToAddress(raw)
 		// pubkeyraw := crypto.FromECDSAPub(&key.PublicKey)
 		// addr := crypto.PubkeyToAddress(key.PublicKey)
+
 		validatorID := idx.ValidatorID(i)
 		pubKey := validatorpk.PubKey{
 			Raw:  pubkeyraw,
 			Type: validatorpk.Types.Secp256k1,
 		}
-		fmt.Printf("\n#%xValidator Key was generated %x\n", i, pubkeyraw)
 
 		validators = append(validators, gpos.Validator{
 			ID:               validatorID,

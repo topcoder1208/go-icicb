@@ -1,19 +1,14 @@
 package launcher
 
 import (
-	"math/big"
 	"os"
-	s "strings"
 
 	"github.com/ethereum/go-ethereum/cmd/utils"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core"
 	"github.com/ethereum/go-ethereum/log"
 	"gopkg.in/urfave/cli.v1"
 
 	"github.com/goicicb/galaxy/genesisstore"
 	"github.com/goicicb/integration/makegenesis"
-	futils "github.com/goicicb/utils"
 )
 
 var (
@@ -27,7 +22,7 @@ var (
 		ArgsUsage: "<filename> (<filename 2> ... <filename N>) [check=false]",
 		Category:  "MISCELLANEOUS COMMANDS",
 		Description: `
-    opera import events
+    galaxy import events
 
 The import command imports events from an RLP-encoded files.
 Events are fully verified by default, unless overridden by check=false flag.`,
@@ -56,7 +51,7 @@ Events are fully verified by default, unless overridden by --check=false flag.`,
 					EventsCheckFlag,
 				},
 				Description: `
-    opera import evm
+    galaxy import evm
 
 The import command imports EVM storage (trie nodes, code, preimages) from files.`,
 			},
@@ -77,7 +72,7 @@ The import command imports EVM storage (trie nodes, code, preimages) from files.
 					DataDirFlag,
 				},
 				Description: `
-    opera export events
+    galaxy export events
 
 Requires a first argument of the file to write to.
 Optional second and third arguments control the first and
@@ -101,7 +96,7 @@ be gzipped
 					DataDirFlag,
 				},
 				Description: `
-    opera check evm
+    galaxy check evm
 
 Checks EVM storage roots and code hashes
 `,
@@ -123,9 +118,9 @@ Checks EVM storage roots and code hashes
 )
 
 func initGenesis(ctx *cli.Context) error {
-	var savePath string
+	/* var savePath string */
 	genesisPath := ctx.Args().First()
-	if len(genesisPath) == 0 {
+	/* if len(genesisPath) == 0 {
 		utils.Fatalf("Must supply path to genesis JSON file")
 	}
 	p1 := s.LastIndex(genesisPath, "/")
@@ -134,31 +129,31 @@ func initGenesis(ctx *cli.Context) error {
 		utils.Fatalf("invalid genesis JSON file: %v", genesisPath)
 	}
 	savePath = genesisPath[0:p1] + genesisPath[p1:p2] + ".g"
-	log.Info(savePath)
-	file, err := os.Open(genesisPath)
+	log.Info(savePath) */
+	/* file, err := os.Open(genesisPath)
 	if err != nil {
 		utils.Fatalf("Failed to read genesis file: %v", err)
 	}
-	defer file.Close()
-	savefile, err := os.OpenFile(savePath, os.O_RDWR|os.O_CREATE|os.O_TRUNC, 0755)
+	defer file.Close() */
+	savefile, err := os.OpenFile(genesisPath, os.O_RDWR|os.O_CREATE|os.O_TRUNC, 0755)
 	if err != nil {
 		utils.Fatalf("Failed to read genesis file: %v", err)
 	}
 	defer savefile.Close()
-	genesis := new(core.Genesis)
+	/* genesis := new(core.Genesis) */
 	// if err := json.NewDecoder(file).Decode(genesis); err != nil {
 	// 	utils.Fatalf("invalid genesis file: %v", err)
 	// }
-	var balance *big.Int = futils.ToIcicb(1000000)
-	keys := make([]common.Address, 0, len(genesis.Alloc))
+	/* var balance *big.Int = futils.ToIcicb(1000000) */
+	/* keys := make([]common.Address, 0, len(genesis.Alloc))
 	for a := range genesis.Alloc {
 		keys = append(keys, a)
-	}
+	} */
 
 	store := makegenesis.MakeGenesisStore()
 	h := store.Hash()
 	log.Info(h.String())
 	genesisstore.WriteGenesisStore(savefile, store)
-	log.Info(balance.String(), savefile)
+	/* log.Info(balance.String(), savefile) */
 	return nil
 }

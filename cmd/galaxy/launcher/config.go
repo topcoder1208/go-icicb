@@ -26,7 +26,7 @@ import (
 
 	"github.com/goicicb/evmcore"
 
-	opera "github.com/goicicb/galaxy"
+	galaxy "github.com/goicicb/galaxy"
 	"github.com/goicicb/galaxy/genesisstore"
 	"github.com/goicicb/gossip"
 	"github.com/goicicb/gossip/gasprice"
@@ -91,8 +91,8 @@ var (
 	}
 
 	AllowedOperaGenesisHashes = map[uint64]hash.Hash{
-		opera.MainNetworkID: hash.HexToHash("0xd6626712e5c4ab5a336da8027d91e361898aa76f0a6a793ab8ebebbc051ecbf7"),
-		opera.TestNetworkID: hash.HexToHash("0x772308e3fbd2e245533d45037cd32a133adc4341ada465fa4d1d6d56ae4a542a"),
+		galaxy.MainNetworkID: hash.HexToHash("0x83ff52f58d0213d67f079db5a63628b715aca0cc8d5d5e9f21e66ef82500063a"),
+		galaxy.TestNetworkID: hash.HexToHash("0x772308e3fbd2e245533d45037cd32a133adc4341ada465fa4d1d6d56ae4a542a"),
 	}
 )
 
