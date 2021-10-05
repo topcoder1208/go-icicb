@@ -126,7 +126,7 @@ func (v *Checker) Validate(de dag.Event) error {
 	// validatorID
 	addr, ok := addrs[e.Creator()]
 
-	fmt.Printf("\n#%xValidator Key was generated %x\n", e, addr)
+	fmt.Printf("\n# event %x sig  %x signed by  %x\n", e.HashToSign().Bytes(), e.Sig(), addr.Raw)
 
 	if !ok {
 		return epochcheck.ErrAuth
