@@ -90,15 +90,9 @@ var (
 		Value: gossip.DefaultConfig(cachescale.Identity).RPCTxFeeCap,
 	}
 
-<<<<<<< HEAD
 	AllowedGalaxyGenesisHashes = map[uint64]hash.Hash{
 		galaxy.MainNetworkID: hash.HexToHash("0xfe034d672482585cb13989ce8fa854c1e22c49b7eedab6e729e412ba08c191ae"),
 		galaxy.TestNetworkID: hash.HexToHash("0x772308e3fbd2e245533d45037cd32a133adc4341ada465fa4d1d6d56ae4a542a"),
-=======
-	AllowedOperaGenesisHashes = map[uint64]hash.Hash{
-		opera.MainNetworkID: hash.HexToHash("0xbbbe809d4aa32f498a28a79ad4a03f12a01fe08cbc672b8d2a8ec366ce0a09c2"),
-		opera.TestNetworkID: hash.HexToHash("0x772308e3fbd2e245533d45037cd32a133adc4341ada465fa4d1d6d56ae4a542a"),
->>>>>>> 973d59f3f305481aaf5560530990d46f3db1ba06
 	}
 )
 
