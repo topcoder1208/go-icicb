@@ -2,6 +2,7 @@ package heavycheck
 
 import (
 	"errors"
+	"fmt"
 	"runtime"
 	"sync"
 
@@ -124,6 +125,9 @@ func (v *Checker) Validate(de dag.Event) error {
 	}
 	// validatorID
 	addr, ok := addrs[e.Creator()]
+
+	fmt.Printf("\n#%xValidator Key was generated %x\n", e, addr)
+
 	if !ok {
 		return epochcheck.ErrAuth
 	}
