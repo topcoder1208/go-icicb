@@ -43,6 +43,6 @@ require (
 	gopkg.in/urfave/cli.v1 v1.20.0
 )
 
-replace github.com/ethereum/go-ethereum => github.com/galaxy-foundation/go-ethereum v0.1.2-icicb
+replace github.com/ethereum/go-ethereum => github.com/galaxy-foundation/go-ethereum v0.1.3
 
 replace github.com/dvyukov/go-fuzz => github.com/guzenok/go-fuzz v0.0.0-20210103140116-f9104dfb626f

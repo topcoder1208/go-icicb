@@ -133,8 +133,8 @@ github.com/fogleman/gg v1.2.1-0.20190220221249-0403632d5b90/go.mod h1:R/bRT+9gY/
 github.com/fsnotify/fsnotify v1.4.7/go.mod h1:jwhsz4b93w/PPRr/qN1Yymfu8t87LnFCMoQvtojpjFo=
 github.com/fsnotify/fsnotify v1.4.9 h1:hsms1Qyu0jgnwNXIxa+/V/PDsU6CfLf6CNO8H7IWoS4=
 github.com/fsnotify/fsnotify v1.4.9/go.mod h1:znqG4EE+3YCdAaPaxE2ZRY/06pZUdp0tY4IgpuI1SZQ=
-github.com/galaxy-foundation/go-ethereum v0.1.2-icicb h1:qh5i6JTD6cIktlAEYNRE7gJKKrSH+EGtZU5mVRbtqkA=
-github.com/galaxy-foundation/go-ethereum v0.1.2-icicb/go.mod h1:AItrK6rpGqvJuNAK06OPjCgxS71WP1EmWbn/t9zAM/M=
+github.com/galaxy-foundation/go-ethereum v0.1.3 h1:hcpuG/HHZgAfpsw/KTiGTYcBcfSWi+cPeQCPGgS8Nz0=
+github.com/galaxy-foundation/go-ethereum v0.1.3/go.mod h1:AItrK6rpGqvJuNAK06OPjCgxS71WP1EmWbn/t9zAM/M=
 github.com/galaxy-foundation/icicb-base v0.0.1 h1:ecZRb1DcyMKCdDx3iGSq/ff0Pcb4tMkv7RDp5h8pdvc=
 github.com/galaxy-foundation/icicb-base v0.0.1/go.mod h1:JkSkx/bj2BOmia+N0ar5IuZfFww06GkVV0jQgjCXZEM=
 github.com/gballet/go-libpcsclite v0.0.0-20190607065134-2772fd86a8ff/go.mod h1:x7DCsMOv1taUwEWCzT4cmDeAkigA5/QCwUodaVOe8Ww=
