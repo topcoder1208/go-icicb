@@ -43,11 +43,11 @@ import (
 	"github.com/ethereum/go-ethereum/params"
 	"github.com/ethereum/go-ethereum/rlp"
 	"github.com/ethereum/go-ethereum/rpc"
-	"github.com/galaxy126/icicb-base/hash"
+	"github.com/galaxy-foundation/icicb-base/hash"
 	"github.com/tyler-smith/go-bip39"
 
 	"github.com/goicicb/evmcore"
-	opera "github.com/goicicb/galaxy"
+	galaxy "github.com/goicicb/galaxy"
 	"github.com/goicicb/inter"
 	"github.com/goicicb/utils/gsignercache"
 )
@@ -1026,7 +1026,7 @@ func DoEstimateGas(ctx context.Context, b Backend, args CallArgs, blockNrOrHash 
 	executable := func(gas uint64) (bool, *evmcore.ExecutionResult, error) {
 		args.Gas = (*hexutil.Uint64)(&gas)
 
-		result, err := DoCall(ctx, b, args, blockNrOrHash, nil, opera.DefaultVMConfig, 0, gasCap)
+		result, err := DoCall(ctx, b, args, blockNrOrHash, nil, galaxy.DefaultVMConfig, 0, gasCap)
 		if err != nil {
 			if errors.Is(err, evmcore.ErrIntrinsicGas) {
 				return true, nil, nil // Special case, raise gas limit

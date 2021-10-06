@@ -3,7 +3,7 @@ package drivertype
 import (
 	"math/big"
 
-	"github.com/galaxy126/icicb-base/inter/idx"
+	"github.com/galaxy-foundation/icicb-base/inter/idx"
 
 	"github.com/goicicb/inter/validatorpk"
 )

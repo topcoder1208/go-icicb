@@ -4,12 +4,12 @@ import (
 	"errors"
 	"strings"
 
-	"github.com/galaxy126/icicb-base/hash"
-	"github.com/galaxy126/icicb-base/inter/dag"
-	"github.com/galaxy126/icicb-base/kvdb"
-	"github.com/galaxy126/icicb-base/kvdb/leveldb"
-	"github.com/galaxy126/icicb-base/kvdb/memorydb"
-	"github.com/galaxy126/icicb-base/utils/cachescale"
+	"github.com/galaxy-foundation/icicb-base/hash"
+	"github.com/galaxy-foundation/icicb-base/inter/dag"
+	"github.com/galaxy-foundation/icicb-base/kvdb"
+	"github.com/galaxy-foundation/icicb-base/kvdb/leveldb"
+	"github.com/galaxy-foundation/icicb-base/kvdb/memorydb"
+	"github.com/galaxy-foundation/icicb-base/utils/cachescale"
 	"github.com/syndtr/goleveldb/leveldb/opt"
 
 	"github.com/goicicb/gossip"

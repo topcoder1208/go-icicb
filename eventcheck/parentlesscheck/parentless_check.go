@@ -1,10 +1,10 @@
 package parentlesscheck
 
 import (
-	"github.com/galaxy126/icicb-base/eventcheck/epochcheck"
-	"github.com/galaxy126/icicb-base/eventcheck/queuedcheck"
-	"github.com/galaxy126/icicb-base/hash"
-	"github.com/galaxy126/icicb-base/inter/dag"
+	"github.com/galaxy-foundation/icicb-base/eventcheck/epochcheck"
+	"github.com/galaxy-foundation/icicb-base/eventcheck/queuedcheck"
+	"github.com/galaxy-foundation/icicb-base/hash"
+	"github.com/galaxy-foundation/icicb-base/inter/dag"
 )
 
 type Checker struct {

@@ -39,8 +39,8 @@ nfpm:
     linux: Tux
 
   vendor: Fanton Foundation
-  homepage: https://fantom.foundation
-  maintainer: Samuel Marks <samuel@fantom.foundation>
+  homepage: https://galaxy.foundation
+  maintainer: Samuel Marks <samuel@galaxy.foundation>
   description: BFT Consensus platform for distributed applications.
   license: MIT
 

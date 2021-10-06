@@ -6,7 +6,7 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	"github.com/ethereum/go-ethereum/log"
-	"github.com/galaxy126/icicb-base/inter/idx"
+	"github.com/galaxy-foundation/icicb-base/inter/idx"
 
 	"github.com/goicicb/gossip/sfcapi"
 )

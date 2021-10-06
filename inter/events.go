@@ -3,8 +3,8 @@ package inter
 import (
 	"bytes"
 
-	"github.com/galaxy126/icicb-base/hash"
-	"github.com/galaxy126/icicb-base/inter/dag"
+	"github.com/galaxy-foundation/icicb-base/hash"
+	"github.com/galaxy-foundation/icicb-base/inter/dag"
 )
 
 // Events is a ordered slice of events.

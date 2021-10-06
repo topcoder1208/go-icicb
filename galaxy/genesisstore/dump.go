@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/galaxy126/icicb-base/hash"
+	"github.com/galaxy-foundation/icicb-base/hash"
 	"github.com/status-im/keycard-go/hexutils"
 
 	"github.com/goicicb/utils/iodb"

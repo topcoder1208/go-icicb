@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/galaxy126/icicb-base/inter/idx"
+	"github.com/galaxy-foundation/icicb-base/inter/idx"
 )
 
 // PublicAbftAPI provides an API to access consensus related information.

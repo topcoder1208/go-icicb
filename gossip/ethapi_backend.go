@@ -17,9 +17,9 @@ import (
 	notify "github.com/ethereum/go-ethereum/event"
 	"github.com/ethereum/go-ethereum/params"
 	"github.com/ethereum/go-ethereum/rpc"
-	"github.com/galaxy126/icicb-base/hash"
-	"github.com/galaxy126/icicb-base/inter/idx"
-	"github.com/galaxy126/icicb-base/inter/pos"
+	"github.com/galaxy-foundation/icicb-base/hash"
+	"github.com/galaxy-foundation/icicb-base/inter/idx"
+	"github.com/galaxy-foundation/icicb-base/inter/pos"
 	"github.com/pkg/errors"
 
 	"github.com/goicicb/ethapi"

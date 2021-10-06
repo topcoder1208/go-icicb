@@ -4,7 +4,7 @@ import (
 	"github.com/pkg/errors"
 	cli "gopkg.in/urfave/cli.v1"
 
-	"github.com/galaxy126/icicb-base/inter/idx"
+	"github.com/galaxy-foundation/icicb-base/inter/idx"
 
 	"github.com/goicicb/gossip/emitter"
 	"github.com/goicicb/integration/makegenesis"

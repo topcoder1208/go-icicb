@@ -11,7 +11,7 @@ import (
 	"github.com/ethereum/go-ethereum/core/vm"
 	ethparams "github.com/ethereum/go-ethereum/params"
 	"github.com/ethereum/go-ethereum/rlp"
-	"github.com/galaxy126/icicb-base/inter/idx"
+	"github.com/galaxy-foundation/icicb-base/inter/idx"
 
 	"github.com/goicicb/galaxy/genesis/evmwriter"
 	"github.com/goicicb/inter"

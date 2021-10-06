@@ -6,9 +6,9 @@ import (
 	"sync/atomic"
 
 	"github.com/ethereum/go-ethereum/common"
-	"github.com/galaxy126/icicb-base/gossip/dagprocessor"
-	"github.com/galaxy126/icicb-base/hash"
-	"github.com/galaxy126/icicb-base/inter/dag"
+	"github.com/galaxy-foundation/icicb-base/gossip/dagprocessor"
+	"github.com/galaxy-foundation/icicb-base/hash"
+	"github.com/galaxy-foundation/icicb-base/inter/dag"
 
 	"github.com/goicicb/eventcheck"
 	"github.com/goicicb/eventcheck/epochcheck"

@@ -1,16 +1,16 @@
 package vecmt
 
 import (
-	"github.com/galaxy126/icicb-base/hash"
-	"github.com/galaxy126/icicb-base/inter/dag"
-	"github.com/galaxy126/icicb-base/inter/idx"
-	"github.com/galaxy126/icicb-base/inter/pos"
-	"github.com/galaxy126/icicb-base/kvdb"
-	"github.com/galaxy126/icicb-base/kvdb/table"
-	"github.com/galaxy126/icicb-base/utils/cachescale"
-	"github.com/galaxy126/icicb-base/utils/wlru"
-	"github.com/galaxy126/icicb-base/vecengine"
-	"github.com/galaxy126/icicb-base/vecfc"
+	"github.com/galaxy-foundation/icicb-base/hash"
+	"github.com/galaxy-foundation/icicb-base/inter/dag"
+	"github.com/galaxy-foundation/icicb-base/inter/idx"
+	"github.com/galaxy-foundation/icicb-base/inter/pos"
+	"github.com/galaxy-foundation/icicb-base/kvdb"
+	"github.com/galaxy-foundation/icicb-base/kvdb/table"
+	"github.com/galaxy-foundation/icicb-base/utils/cachescale"
+	"github.com/galaxy-foundation/icicb-base/utils/wlru"
+	"github.com/galaxy-foundation/icicb-base/vecengine"
+	"github.com/galaxy-foundation/icicb-base/vecfc"
 )
 
 // IndexCacheConfig - config for cache sizes of Engine

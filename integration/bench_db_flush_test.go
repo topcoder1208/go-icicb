@@ -7,12 +7,12 @@ import (
 	"testing"
 
 	"github.com/ethereum/go-ethereum/common"
-	"github.com/galaxy126/icicb-base/abft"
-	"github.com/galaxy126/icicb-base/hash"
-	"github.com/galaxy126/icicb-base/inter/idx"
-	"github.com/galaxy126/icicb-base/kvdb"
-	"github.com/galaxy126/icicb-base/kvdb/leveldb"
-	"github.com/galaxy126/icicb-base/utils/cachescale"
+	"github.com/galaxy-foundation/icicb-base/abft"
+	"github.com/galaxy-foundation/icicb-base/hash"
+	"github.com/galaxy-foundation/icicb-base/inter/idx"
+	"github.com/galaxy-foundation/icicb-base/kvdb"
+	"github.com/galaxy-foundation/icicb-base/kvdb/leveldb"
+	"github.com/galaxy-foundation/icicb-base/utils/cachescale"
 	"github.com/syndtr/goleveldb/leveldb/opt"
 
 	"github.com/goicicb/galaxy/genesisstore"

@@ -28,8 +28,8 @@ import (
 	"github.com/ethereum/go-ethereum/ethdb"
 	notify "github.com/ethereum/go-ethereum/event"
 	"github.com/ethereum/go-ethereum/rpc"
-	"github.com/galaxy126/icicb-base/hash"
-	"github.com/galaxy126/icicb-base/inter/idx"
+	"github.com/galaxy-foundation/icicb-base/hash"
+	"github.com/galaxy-foundation/icicb-base/inter/idx"
 
 	"github.com/goicicb/evmcore"
 	"github.com/goicicb/topicsdb"

@@ -1,11 +1,11 @@
 package vecmt2dagidx
 
 import (
-	"github.com/galaxy126/icicb-base/abft"
-	"github.com/galaxy126/icicb-base/abft/dagidx"
-	"github.com/galaxy126/icicb-base/hash"
-	"github.com/galaxy126/icicb-base/inter/idx"
-	"github.com/galaxy126/icicb-base/vecfc"
+	"github.com/galaxy-foundation/icicb-base/abft"
+	"github.com/galaxy-foundation/icicb-base/abft/dagidx"
+	"github.com/galaxy-foundation/icicb-base/hash"
+	"github.com/galaxy-foundation/icicb-base/inter/idx"
+	"github.com/galaxy-foundation/icicb-base/vecfc"
 
 	"github.com/goicicb/vecmt"
 )

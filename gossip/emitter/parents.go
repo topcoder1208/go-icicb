@@ -3,9 +3,9 @@ package emitter
 import (
 	"time"
 
-	"github.com/galaxy126/icicb-base/emitter/ancestor"
-	"github.com/galaxy126/icicb-base/hash"
-	"github.com/galaxy126/icicb-base/inter/idx"
+	"github.com/galaxy-foundation/icicb-base/emitter/ancestor"
+	"github.com/galaxy-foundation/icicb-base/hash"
+	"github.com/galaxy-foundation/icicb-base/inter/idx"
 )
 
 // buildSearchStrategies returns a strategy for each parent search

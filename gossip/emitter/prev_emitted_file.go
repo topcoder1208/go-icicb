@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 
 	"github.com/ethereum/go-ethereum/log"
-	"github.com/galaxy126/icicb-base/hash"
+	"github.com/galaxy-foundation/icicb-base/hash"
 )
 
 func openEventFile(path string, isSyncMode bool) *os.File {

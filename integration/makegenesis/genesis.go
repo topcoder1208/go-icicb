@@ -2,6 +2,7 @@ package makegenesis
 
 import (
 	"crypto/ecdsa"
+	"encoding/hex"
 	"fmt"
 	"math/big"
 	"math/rand"
@@ -10,8 +11,8 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/galaxy126/icicb-base/hash"
-	"github.com/galaxy126/icicb-base/inter/idx"
+	"github.com/galaxy-foundation/icicb-base/hash"
+	"github.com/galaxy-foundation/icicb-base/inter/idx"
 
 	galaxy "github.com/goicicb/galaxy"
 	"github.com/goicicb/galaxy/genesis"
@@ -59,11 +60,11 @@ func MakeGenesisStore() *genesisstore.Store {
 	var accounts = []ValidatorAccount{
 		{
 			address:   "0x3c85D69dCC0Cc8471089889D6846E36c3E1baD65",
-			validator: "0xc0042d618582085fcbe8a2222a58b2be14a5a051a93ca35fd07bcb492e63a7a2f04932e4b854ae4753ba429eb5718ac194e2e23ea6f549fb90f0517e17ee34b1ac73",
+			validator: "042d618582085fcbe8a2222a58b2be14a5a051a93ca35fd07bcb492e63a7a2f04932e4b854ae4753ba429eb5718ac194e2e23ea6f549fb90f0517e17ee34b1ac73",
 		},
 		{
 			address:   "0x977a6B645d98CF58f2b02a17E1E51D7228D091e7",
-			validator: "0xc004507ab1e6348050324b122f14710aa3f5699d578c07b3a32f511852de8422b776f283bbec1d1f74aac88e822fa664af35b266661ecaa6e2642990400c4d91599c",
+			validator: "04507ab1e6348050324b122f14710aa3f5699d578c07b3a32f511852de8422b776f283bbec1d1f74aac88e822fa664af35b266661ecaa6e2642990400c4d91599c",
 		},
 	}
 	num := len(accounts)
@@ -76,20 +77,14 @@ func MakeGenesisStore() *genesisstore.Store {
 	for i := 1; i <= num; i++ {
 		addr := common.HexToAddress(accounts[i-1].address)
 		pubkeyraw := common.Hex2Bytes(accounts[i-1].validator)
-
-		// addr1, _ := hex.DecodeString(accounts[i-1].address)
-		//
-
-		// reader := rand.New(rand.NewSource(nsec + int64(i)))
-		// key, _ := ecdsa.GenerateKey(crypto.S256(), reader)
-		// pubkeyraw := crypto.FromECDSAPub(&key.PublicKey)
+		fmt.Printf("\n# addr %x pubkeyraw %s len %d\n", addr, hex.EncodeToString(pubkeyraw), len(pubkeyraw))
 		/*
-			fmt.Printf("\nYour new privatekey was generated %x\n", key.D) */
-		// addr := crypto.PubkeyToAddress(key.PublicKey)
-		// addr := crypto.PubkeyToAddress(raw)
-		// pubkeyraw := crypto.FromECDSAPub(&key.PublicKey)
-		// addr := crypto.PubkeyToAddress(key.PublicKey)
-
+			reader := rand.New(rand.NewSource(nsec + int64(i)))
+			key, _ := ecdsa.GenerateKey(crypto.S256(), reader)
+			pubkeyraw1 := crypto.FromECDSAPub(&key.PublicKey)
+			addr1 := crypto.PubkeyToAddress(key.PublicKey)
+			fmt.Printf("\npubkey %x \t address %x \t privatekey %x \n", pubkeyraw1, addr1, key.D)
+		*/
 		validatorID := idx.ValidatorID(i)
 		pubKey := validatorpk.PubKey{
 			Raw:  pubkeyraw,

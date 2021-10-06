@@ -1,8 +1,8 @@
 package evmstore
 
 import (
-	"github.com/galaxy126/icicb-base/hash"
-	"github.com/galaxy126/icicb-base/kvdb"
+	"github.com/galaxy-foundation/icicb-base/hash"
+	"github.com/galaxy-foundation/icicb-base/kvdb"
 	"github.com/syndtr/goleveldb/leveldb/opt"
 
 	"github.com/goicicb/evmcore"

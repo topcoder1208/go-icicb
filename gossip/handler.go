@@ -15,16 +15,16 @@ import (
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/p2p"
 	"github.com/ethereum/go-ethereum/rlp"
-	"github.com/galaxy126/icicb-base/eventcheck/queuedcheck"
-	"github.com/galaxy126/icicb-base/gossip/dagprocessor"
-	"github.com/galaxy126/icicb-base/gossip/dagstream"
-	"github.com/galaxy126/icicb-base/gossip/dagstream/streamleecher"
-	"github.com/galaxy126/icicb-base/gossip/dagstream/streamseeder"
-	"github.com/galaxy126/icicb-base/gossip/itemsfetcher"
-	"github.com/galaxy126/icicb-base/hash"
-	"github.com/galaxy126/icicb-base/inter/dag"
-	"github.com/galaxy126/icicb-base/inter/idx"
-	"github.com/galaxy126/icicb-base/utils/datasemaphore"
+	"github.com/galaxy-foundation/icicb-base/eventcheck/queuedcheck"
+	"github.com/galaxy-foundation/icicb-base/gossip/dagprocessor"
+	"github.com/galaxy-foundation/icicb-base/gossip/dagstream"
+	"github.com/galaxy-foundation/icicb-base/gossip/dagstream/streamleecher"
+	"github.com/galaxy-foundation/icicb-base/gossip/dagstream/streamseeder"
+	"github.com/galaxy-foundation/icicb-base/gossip/itemsfetcher"
+	"github.com/galaxy-foundation/icicb-base/hash"
+	"github.com/galaxy-foundation/icicb-base/inter/dag"
+	"github.com/galaxy-foundation/icicb-base/inter/idx"
+	"github.com/galaxy-foundation/icicb-base/utils/datasemaphore"
 
 	"github.com/goicicb/eventcheck"
 	"github.com/goicicb/eventcheck/parentlesscheck"
@@ -123,8 +123,8 @@ type ProtocolManager struct {
 	logger.Instance
 }
 
-// newHandler returns a new Fantom sub protocol manager. The Fantom sub protocol manages peers capable
-// with the Fantom network.
+// newHandler returns a new Galaxy sub protocol manager. The Galaxy sub protocol manages peers capable
+// with the Galaxy network.
 func newHandler(
 	c handlerConfig,
 ) (

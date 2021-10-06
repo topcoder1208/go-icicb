@@ -30,7 +30,7 @@ import (
 	"github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/params"
-	"github.com/galaxy126/icicb-base/kvdb/table"
+	"github.com/galaxy-foundation/icicb-base/kvdb/table"
 
 	"github.com/goicicb/topicsdb"
 	"github.com/goicicb/utils/adapters/ethdb2kvdb"

@@ -22,7 +22,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/galaxy126/icicb-base/inter/idx"
+	"github.com/galaxy-foundation/icicb-base/inter/idx"
 
 	galaxy "github.com/goicicb/galaxy"
 	"github.com/goicicb/utils/piecefunc"

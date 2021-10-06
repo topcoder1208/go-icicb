@@ -3,9 +3,9 @@ package sealmodule
 import (
 	"math/big"
 
-	"github.com/galaxy126/icicb-base/inter/idx"
-	"github.com/galaxy126/icicb-base/inter/pos"
-	"github.com/galaxy126/icicb-base/lachesis"
+	"github.com/galaxy-foundation/icicb-base/inter/idx"
+	"github.com/galaxy-foundation/icicb-base/inter/pos"
+	"github.com/galaxy-foundation/icicb-base/lachesis"
 
 	"github.com/goicicb/gossip/blockproc"
 )

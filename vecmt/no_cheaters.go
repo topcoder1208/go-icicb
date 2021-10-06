@@ -3,7 +3,7 @@ package vecmt
 import (
 	"errors"
 
-	"github.com/galaxy126/icicb-base/hash"
+	"github.com/galaxy-foundation/icicb-base/hash"
 )
 
 // NoCheaters excludes events which are observed by selfParents as cheaters.

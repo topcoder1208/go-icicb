@@ -2,7 +2,7 @@ package migration
 
 import (
 	"github.com/ethereum/go-ethereum/log"
-	"github.com/galaxy126/icicb-base/kvdb"
+	"github.com/galaxy-foundation/icicb-base/kvdb"
 )
 
 // KvdbIDStore stores id

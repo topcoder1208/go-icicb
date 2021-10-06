@@ -3,7 +3,7 @@ package parentscheck
 import (
 	"errors"
 
-	base "github.com/galaxy126/icicb-base/eventcheck/parentscheck"
+	base "github.com/galaxy-foundation/icicb-base/eventcheck/parentscheck"
 
 	"github.com/goicicb/inter"
 )

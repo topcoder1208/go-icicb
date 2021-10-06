@@ -11,9 +11,9 @@ import (
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/log"
 	"github.com/ethereum/go-ethereum/rlp"
-	"github.com/galaxy126/icicb-base/inter/idx"
-	"github.com/galaxy126/icicb-base/kvdb/table"
-	"github.com/galaxy126/icicb-base/utils/simplewlru"
+	"github.com/galaxy-foundation/icicb-base/inter/idx"
+	"github.com/galaxy-foundation/icicb-base/kvdb/table"
+	"github.com/galaxy-foundation/icicb-base/utils/simplewlru"
 	"gopkg.in/urfave/cli.v1"
 
 	"github.com/goicicb/integration"

@@ -2,7 +2,6 @@ module github.com/goicicb
 
 go 1.14
 
-//
 require (
 	github.com/allegro/bigcache v1.2.1 // indirect
 	github.com/certifi/gocertifi v0.0.0-20191021191039-0944d244cd40 // indirect
@@ -15,7 +14,7 @@ require (
 	github.com/ethereum/go-ethereum v1.9.22
 	github.com/evalphobia/logrus_sentry v0.8.2
 	github.com/fjl/memsize v0.0.0-20190710130421-bcb5799ab5e5
-	github.com/galaxy126/icicb-base v0.0.0-20210921200305-56031e83fad3
+	github.com/galaxy-foundation/icicb-base v0.0.1
 	github.com/gballet/go-libpcsclite v0.0.0-20191108122812-4678299bea08 // indirect
 	github.com/getsentry/raven-go v0.2.0 // indirect
 	github.com/golang/mock v1.3.1
@@ -34,7 +33,7 @@ require (
 	github.com/prometheus/tsdb v0.10.0 // indirect
 	github.com/rjeczalik/notify v0.9.2 // indirect
 	github.com/sirupsen/logrus v1.4.2
-	github.com/status-im/keycard-go v0.0.0-20190424133014-d95853db0f48
+	github.com/status-im/keycard-go v0.0.0-20210911161356-c8058144cee8
 	github.com/stretchr/testify v1.7.0
 	github.com/syndtr/goleveldb v1.0.1-0.20210305035536-64b5b1c73954
 	github.com/tyler-smith/go-bip39 v1.0.2
@@ -44,7 +43,6 @@ require (
 	gopkg.in/urfave/cli.v1 v1.20.0
 )
 
-// replace github.com/ethereum/go-ethereum => github.com/Fantom-foundation/go-ethereum v1.9.7-0.20210827160629-07563551b4c0
-replace github.com/ethereum/go-ethereum => github.com/galaxy-foundation/go-ethereum v0.1.1-icicb-0.1
+replace github.com/ethereum/go-ethereum => github.com/galaxy-foundation/go-ethereum v0.1.2-icicb
 
 replace github.com/dvyukov/go-fuzz => github.com/guzenok/go-fuzz v0.0.0-20210103140116-f9104dfb626f

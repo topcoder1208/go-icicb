@@ -1,9 +1,9 @@
 package genesisstore
 
 import (
-	"github.com/galaxy126/icicb-base/kvdb"
-	"github.com/galaxy126/icicb-base/kvdb/memorydb"
-	"github.com/galaxy126/icicb-base/kvdb/table"
+	"github.com/galaxy-foundation/icicb-base/kvdb"
+	"github.com/galaxy-foundation/icicb-base/kvdb/memorydb"
+	"github.com/galaxy-foundation/icicb-base/kvdb/table"
 
 	"github.com/goicicb/logger"
 	"github.com/goicicb/utils/rlpstore"

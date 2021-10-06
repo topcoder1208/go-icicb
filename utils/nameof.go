@@ -3,8 +3,8 @@ package utils
 import (
 	"fmt"
 
-	"github.com/galaxy126/icicb-base/hash"
-	"github.com/galaxy126/icicb-base/inter/idx"
+	"github.com/galaxy-foundation/icicb-base/hash"
+	"github.com/galaxy-foundation/icicb-base/inter/idx"
 )
 
 // NameOf returns human readable string representation.

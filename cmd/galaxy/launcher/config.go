@@ -18,9 +18,9 @@ import (
 	"github.com/ethereum/go-ethereum/node"
 	"github.com/ethereum/go-ethereum/p2p/enode"
 	"github.com/ethereum/go-ethereum/params"
-	"github.com/galaxy126/icicb-base/abft"
-	"github.com/galaxy126/icicb-base/hash"
-	"github.com/galaxy126/icicb-base/utils/cachescale"
+	"github.com/galaxy-foundation/icicb-base/abft"
+	"github.com/galaxy-foundation/icicb-base/hash"
+	"github.com/galaxy-foundation/icicb-base/utils/cachescale"
 	"github.com/naoina/toml"
 	"gopkg.in/urfave/cli.v1"
 
@@ -91,7 +91,7 @@ var (
 	}
 
 	AllowedGalaxyGenesisHashes = map[uint64]hash.Hash{
-		galaxy.MainNetworkID: hash.HexToHash("0xfe034d672482585cb13989ce8fa854c1e22c49b7eedab6e729e412ba08c191ae"),
+		galaxy.MainNetworkID: hash.HexToHash("0x5944f8d237fc257622f2c22d261bb7b33a727397b4b92145afa5f48c9d2f4101"),
 		galaxy.TestNetworkID: hash.HexToHash("0x772308e3fbd2e245533d45037cd32a133adc4341ada465fa4d1d6d56ae4a542a"),
 	}
 )

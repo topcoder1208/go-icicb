@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"math"
 
-	"github.com/galaxy126/icicb-base/inter/idx"
-	"github.com/galaxy126/icicb-base/kvdb"
-	"github.com/galaxy126/icicb-base/kvdb/table"
+	"github.com/galaxy-foundation/icicb-base/inter/idx"
+	"github.com/galaxy-foundation/icicb-base/kvdb"
+	"github.com/galaxy-foundation/icicb-base/kvdb/table"
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/types"

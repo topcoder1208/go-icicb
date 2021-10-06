@@ -1,8 +1,8 @@
 package vecmt
 
 import (
-	"github.com/galaxy126/icicb-base/hash"
-	"github.com/galaxy126/icicb-base/kvdb"
+	"github.com/galaxy-foundation/icicb-base/hash"
+	"github.com/galaxy-foundation/icicb-base/kvdb"
 )
 
 func (vi *Index) getBytes(table kvdb.Store, id hash.Event) []byte {

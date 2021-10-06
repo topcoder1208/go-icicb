@@ -5,7 +5,7 @@ import (
 	"math"
 
 	"github.com/ethereum/go-ethereum/core/types"
-	base "github.com/galaxy126/icicb-base/eventcheck/basiccheck"
+	base "github.com/galaxy-foundation/icicb-base/eventcheck/basiccheck"
 
 	"github.com/goicicb/evmcore"
 	"github.com/goicicb/inter"

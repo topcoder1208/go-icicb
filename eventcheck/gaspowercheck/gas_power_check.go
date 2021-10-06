@@ -5,9 +5,9 @@ import (
 	"math/big"
 	"time"
 
-	"github.com/galaxy126/icicb-base/eventcheck/epochcheck"
-	"github.com/galaxy126/icicb-base/inter/idx"
-	"github.com/galaxy126/icicb-base/inter/pos"
+	"github.com/galaxy-foundation/icicb-base/eventcheck/epochcheck"
+	"github.com/galaxy-foundation/icicb-base/inter/idx"
+	"github.com/galaxy-foundation/icicb-base/inter/pos"
 
 	"github.com/goicicb/inter"
 )

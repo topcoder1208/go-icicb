@@ -4,7 +4,7 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/galaxy126/icicb-base/inter/idx"
+	"github.com/galaxy-foundation/icicb-base/inter/idx"
 	"github.com/stretchr/testify/require"
 
 	galaxy "github.com/goicicb/galaxy"

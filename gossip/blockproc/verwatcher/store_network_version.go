@@ -1,7 +1,7 @@
 package verwatcher
 
 import (
-	"github.com/galaxy126/icicb-base/common/bigendian"
+	"github.com/galaxy-foundation/icicb-base/common/bigendian"
 )
 
 const (

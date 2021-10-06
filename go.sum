@@ -133,10 +133,10 @@ github.com/fogleman/gg v1.2.1-0.20190220221249-0403632d5b90/go.mod h1:R/bRT+9gY/
 github.com/fsnotify/fsnotify v1.4.7/go.mod h1:jwhsz4b93w/PPRr/qN1Yymfu8t87LnFCMoQvtojpjFo=
 github.com/fsnotify/fsnotify v1.4.9 h1:hsms1Qyu0jgnwNXIxa+/V/PDsU6CfLf6CNO8H7IWoS4=
 github.com/fsnotify/fsnotify v1.4.9/go.mod h1:znqG4EE+3YCdAaPaxE2ZRY/06pZUdp0tY4IgpuI1SZQ=
-github.com/galaxy-foundation/go-ethereum v0.1.1-icicb-0.1 h1:nP/4aFpn3hUi2yoQDxQXfpeAQGBeyNFaX/D6UV+WrBc=
-github.com/galaxy-foundation/go-ethereum v0.1.1-icicb-0.1/go.mod h1:AItrK6rpGqvJuNAK06OPjCgxS71WP1EmWbn/t9zAM/M=
-github.com/galaxy126/icicb-base v0.0.0-20210921200305-56031e83fad3 h1:vJ7dlcCSnzBHgdK0FO9vMX934CaJ5BrlmULHDUhPV/0=
-github.com/galaxy126/icicb-base v0.0.0-20210921200305-56031e83fad3/go.mod h1:nvxLHyg12VepcA/YENcpbPx8uxCm5cl6OP+yIx2m5PM=
+github.com/galaxy-foundation/go-ethereum v0.1.2-icicb h1:qh5i6JTD6cIktlAEYNRE7gJKKrSH+EGtZU5mVRbtqkA=
+github.com/galaxy-foundation/go-ethereum v0.1.2-icicb/go.mod h1:AItrK6rpGqvJuNAK06OPjCgxS71WP1EmWbn/t9zAM/M=
+github.com/galaxy-foundation/icicb-base v0.0.1 h1:ecZRb1DcyMKCdDx3iGSq/ff0Pcb4tMkv7RDp5h8pdvc=
+github.com/galaxy-foundation/icicb-base v0.0.1/go.mod h1:JkSkx/bj2BOmia+N0ar5IuZfFww06GkVV0jQgjCXZEM=
 github.com/gballet/go-libpcsclite v0.0.0-20190607065134-2772fd86a8ff/go.mod h1:x7DCsMOv1taUwEWCzT4cmDeAkigA5/QCwUodaVOe8Ww=
 github.com/gballet/go-libpcsclite v0.0.0-20191108122812-4678299bea08 h1:f6D9Hr8xV8uYKlyuj8XIruxlh9WjVjdh1gIicAS7ays=
 github.com/gballet/go-libpcsclite v0.0.0-20191108122812-4678299bea08/go.mod h1:x7DCsMOv1taUwEWCzT4cmDeAkigA5/QCwUodaVOe8Ww=
@@ -383,8 +383,9 @@ github.com/spf13/cast v1.3.0/go.mod h1:Qx5cxh0v+4UWYiBimWS+eyWzqEqokIECu5etghLkU
 github.com/spf13/cobra v0.0.3/go.mod h1:1l0Ry5zgKvJasoi3XT1TypsSe7PqH0Sj9dhYf7v3XqQ=
 github.com/spf13/pflag v1.0.3/go.mod h1:DYY7MBk1bdzusC3SYhjObp+wFpr4gzcvqqNjLnInEg4=
 github.com/status-im/keycard-go v0.0.0-20190316090335-8537d3370df4/go.mod h1:RZLeN1LMWmRsyYjvAu+I6Dm9QmlDaIIt+Y+4Kd7Tp+Q=
-github.com/status-im/keycard-go v0.0.0-20190424133014-d95853db0f48 h1:ju5UTwk5Odtm4trrY+4Ca4RMj5OyXbmVeDAVad2T0Jw=
 github.com/status-im/keycard-go v0.0.0-20190424133014-d95853db0f48/go.mod h1:RZLeN1LMWmRsyYjvAu+I6Dm9QmlDaIIt+Y+4Kd7Tp+Q=
+github.com/status-im/keycard-go v0.0.0-20210911161356-c8058144cee8 h1:7prpIaRRVzNt7woyUVjWNYXnmgT3dB/JtH8wuZCTElI=
+github.com/status-im/keycard-go v0.0.0-20210911161356-c8058144cee8/go.mod h1:EyC0vqnPRbDQGq3j4Ej9lSP/nKE8DwwjTwfQ0Yan6SQ=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
 github.com/stretchr/objx v0.1.1/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
 github.com/stretchr/testify v1.2.0/go.mod h1:a8OnRcib4nhh0OaRAV+Yts87kKdq0PP7pXfy6kDkUVs=
@@ -427,6 +428,7 @@ golang.org/x/crypto v0.0.0-20190510104115-cbcb75029529/go.mod h1:yigFU9vqHzYiE8U
 golang.org/x/crypto v0.0.0-20190605123033-f99c8df09eb5/go.mod h1:yigFU9vqHzYiE8UmvKecakEJjdnWj3jj499lnFckfCI=
 golang.org/x/crypto v0.0.0-20190909091759-094676da4a83/go.mod h1:yigFU9vqHzYiE8UmvKecakEJjdnWj3jj499lnFckfCI=
 golang.org/x/crypto v0.0.0-20191011191535-87dc89f01550/go.mod h1:yigFU9vqHzYiE8UmvKecakEJjdnWj3jj499lnFckfCI=
+golang.org/x/crypto v0.0.0-20200323165209-0ec3e9974c59/go.mod h1:LzIPMQfyMNhhGPhUkYOs5KpL4U8rLKemX1yGLhDgUto=
 golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9/go.mod h1:LzIPMQfyMNhhGPhUkYOs5KpL4U8rLKemX1yGLhDgUto=
 golang.org/x/crypto v0.0.0-20210322153248-0c34fe9e7dc2 h1:It14KIkyBFYkHkwZ7k45minvA9aorojkyjGk9KJ5B/w=
 golang.org/x/crypto v0.0.0-20210322153248-0c34fe9e7dc2/go.mod h1:T9bdIzuCu7OtxOm1hfPfRQxPLYneinmdGuTeoZ9dtd4=

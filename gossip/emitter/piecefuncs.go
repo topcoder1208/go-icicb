@@ -3,8 +3,8 @@ package emitter
 import (
 	"math"
 
-	"github.com/galaxy126/icicb-base/emitter/ancestor"
-	"github.com/galaxy126/icicb-base/inter/idx"
+	"github.com/galaxy-foundation/icicb-base/emitter/ancestor"
+	"github.com/galaxy-foundation/icicb-base/inter/idx"
 
 	"github.com/goicicb/utils/piecefunc"
 )

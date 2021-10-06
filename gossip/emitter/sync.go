@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/galaxy126/icicb-base/emitter/doublesign"
-	"github.com/galaxy126/icicb-base/hash"
+	"github.com/galaxy-foundation/icicb-base/emitter/doublesign"
+	"github.com/galaxy-foundation/icicb-base/hash"
 
 	"github.com/goicicb/inter"
 	"github.com/goicicb/utils/errlock"

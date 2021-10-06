@@ -3,7 +3,7 @@ package sfcapi
 import (
 	"math/big"
 
-	"github.com/galaxy126/icicb-base/inter/idx"
+	"github.com/galaxy-foundation/icicb-base/inter/idx"
 )
 
 // GetDelegationClaimedRewards returns sum of claimed rewards in past, by this delegation

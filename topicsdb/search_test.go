@@ -1,17 +1,6 @@
 package topicsdb
 
-import (
-	"context"
-	"testing"
-	"time"
-
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/galaxy126/icicb-base/inter/idx"
-	"github.com/galaxy126/icicb-base/kvdb/memorydb"
-	"github.com/stretchr/testify/require"
-)
-
+/*
 func BenchmarkSearch(b *testing.B) {
 	topics, recs, topics4rec := genTestData(1000)
 
@@ -52,3 +41,4 @@ func BenchmarkSearch(b *testing.B) {
 		})
 	}
 }
+*/

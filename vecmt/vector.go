@@ -3,8 +3,8 @@ package vecmt
 import (
 	"encoding/binary"
 
-	"github.com/galaxy126/icicb-base/inter/idx"
-	"github.com/galaxy126/icicb-base/vecfc"
+	"github.com/galaxy-foundation/icicb-base/inter/idx"
+	"github.com/galaxy-foundation/icicb-base/vecfc"
 
 	"github.com/goicicb/inter"
 )

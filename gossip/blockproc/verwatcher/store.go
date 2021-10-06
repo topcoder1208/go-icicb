@@ -1,7 +1,7 @@
 package verwatcher
 
 import (
-	"github.com/galaxy126/icicb-base/kvdb"
+	"github.com/galaxy-foundation/icicb-base/kvdb"
 
 	"github.com/goicicb/logger"
 )

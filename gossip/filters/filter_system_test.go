@@ -32,7 +32,7 @@ import (
 	notify "github.com/ethereum/go-ethereum/event"
 	"github.com/ethereum/go-ethereum/params"
 	"github.com/ethereum/go-ethereum/rpc"
-	"github.com/galaxy126/icicb-base/kvdb/memorydb"
+	"github.com/galaxy-foundation/icicb-base/kvdb/memorydb"
 	"github.com/syndtr/goleveldb/leveldb/opt"
 
 	"github.com/goicicb/evmcore"

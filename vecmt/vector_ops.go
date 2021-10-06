@@ -1,10 +1,10 @@
 package vecmt
 
 import (
-	"github.com/galaxy126/icicb-base/inter/dag"
-	"github.com/galaxy126/icicb-base/inter/idx"
-	"github.com/galaxy126/icicb-base/vecengine"
-	"github.com/galaxy126/icicb-base/vecfc"
+	"github.com/galaxy-foundation/icicb-base/inter/dag"
+	"github.com/galaxy-foundation/icicb-base/inter/idx"
+	"github.com/galaxy-foundation/icicb-base/vecengine"
+	"github.com/galaxy-foundation/icicb-base/vecfc"
 
 	"github.com/goicicb/inter"
 )

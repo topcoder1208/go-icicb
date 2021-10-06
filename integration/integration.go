@@ -6,8 +6,8 @@ import (
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/node"
 	"github.com/ethereum/go-ethereum/p2p/simulations/adapters"
-	"github.com/galaxy126/icicb-base/abft"
-	"github.com/galaxy126/icicb-base/utils/cachescale"
+	"github.com/galaxy-foundation/icicb-base/abft"
+	"github.com/galaxy-foundation/icicb-base/utils/cachescale"
 	"github.com/status-im/keycard-go/hexutils"
 
 	"github.com/goicicb/gossip"

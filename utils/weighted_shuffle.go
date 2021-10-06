@@ -3,9 +3,9 @@ package utils
 import (
 	"crypto/sha256"
 
-	"github.com/galaxy126/icicb-base/common/littleendian"
-	"github.com/galaxy126/icicb-base/hash"
-	"github.com/galaxy126/icicb-base/inter/pos"
+	"github.com/galaxy-foundation/icicb-base/common/littleendian"
+	"github.com/galaxy-foundation/icicb-base/hash"
+	"github.com/galaxy-foundation/icicb-base/inter/pos"
 )
 
 type weightedShuffleNode struct {

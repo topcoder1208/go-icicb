@@ -10,7 +10,7 @@ import (
 	"testing"
 
 	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/galaxy126/icicb-base/hash"
+	"github.com/galaxy-foundation/icicb-base/hash"
 	"github.com/stretchr/testify/require"
 
 	"github.com/goicicb/gossip/contract/ballot"

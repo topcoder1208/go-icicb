@@ -4,8 +4,8 @@ import (
 	"io"
 
 	"github.com/ethereum/go-ethereum/rlp"
-	"github.com/galaxy126/icicb-base/inter/idx"
-	"github.com/galaxy126/icicb-base/inter/pos"
+	"github.com/galaxy-foundation/icicb-base/inter/idx"
+	"github.com/galaxy-foundation/icicb-base/inter/pos"
 
 	"github.com/goicicb/inter/drivertype"
 )

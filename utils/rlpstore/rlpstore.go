@@ -2,7 +2,7 @@ package rlpstore
 
 import (
 	"github.com/ethereum/go-ethereum/rlp"
-	"github.com/galaxy126/icicb-base/kvdb"
+	"github.com/galaxy-foundation/icicb-base/kvdb"
 	"github.com/goicicb/logger"
 )
 

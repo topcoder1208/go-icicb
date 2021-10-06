@@ -4,8 +4,8 @@ import (
 	"errors"
 
 	"github.com/ethereum/go-ethereum/core/types"
-	base "github.com/galaxy126/icicb-base/eventcheck/epochcheck"
-	"github.com/galaxy126/icicb-base/inter/idx"
+	base "github.com/galaxy-foundation/icicb-base/eventcheck/epochcheck"
+	"github.com/galaxy-foundation/icicb-base/inter/idx"
 
 	galaxy "github.com/goicicb/galaxy"
 	"github.com/goicicb/inter"

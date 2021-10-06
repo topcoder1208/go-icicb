@@ -2,8 +2,8 @@ package gossip
 
 import (
 	"github.com/ethereum/go-ethereum/log"
-	"github.com/galaxy126/icicb-base/inter/idx"
-	"github.com/galaxy126/icicb-base/inter/pos"
+	"github.com/galaxy-foundation/icicb-base/inter/idx"
+	"github.com/galaxy-foundation/icicb-base/inter/pos"
 
 	"github.com/goicicb/galaxy"
 	"github.com/goicicb/gossip/blockproc"

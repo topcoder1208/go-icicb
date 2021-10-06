@@ -3,7 +3,7 @@ package concurrent
 import (
 	"sync"
 
-	"github.com/galaxy126/icicb-base/hash"
+	"github.com/galaxy-foundation/icicb-base/hash"
 )
 
 type EventsSet struct {

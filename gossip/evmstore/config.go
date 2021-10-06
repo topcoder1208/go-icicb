@@ -1,7 +1,7 @@
 package evmstore
 
 import (
-	"github.com/galaxy126/icicb-base/utils/cachescale"
+	"github.com/galaxy-foundation/icicb-base/utils/cachescale"
 	"github.com/syndtr/goleveldb/leveldb/opt"
 )
 

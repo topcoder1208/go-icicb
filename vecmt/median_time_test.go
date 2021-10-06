@@ -3,15 +3,15 @@ package vecmt
 import (
 	"testing"
 
-	"github.com/galaxy126/icicb-base/inter/idx"
-	"github.com/galaxy126/icicb-base/vecfc"
+	"github.com/galaxy-foundation/icicb-base/inter/idx"
+	"github.com/galaxy-foundation/icicb-base/vecfc"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/galaxy126/icicb-base/hash"
-	"github.com/galaxy126/icicb-base/inter/dag"
-	"github.com/galaxy126/icicb-base/inter/dag/tdag"
-	"github.com/galaxy126/icicb-base/inter/pos"
-	"github.com/galaxy126/icicb-base/kvdb/memorydb"
+	"github.com/galaxy-foundation/icicb-base/hash"
+	"github.com/galaxy-foundation/icicb-base/inter/dag"
+	"github.com/galaxy-foundation/icicb-base/inter/dag/tdag"
+	"github.com/galaxy-foundation/icicb-base/inter/pos"
+	"github.com/galaxy-foundation/icicb-base/kvdb/memorydb"
 
 	"github.com/goicicb/inter"
 )

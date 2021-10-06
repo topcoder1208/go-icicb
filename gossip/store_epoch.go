@@ -9,10 +9,10 @@ import (
 	"fmt"
 	"sync/atomic"
 
-	"github.com/galaxy126/icicb-base/inter/idx"
-	"github.com/galaxy126/icicb-base/kvdb"
-	"github.com/galaxy126/icicb-base/kvdb/skiperrors"
-	"github.com/galaxy126/icicb-base/kvdb/table"
+	"github.com/galaxy-foundation/icicb-base/inter/idx"
+	"github.com/galaxy-foundation/icicb-base/kvdb"
+	"github.com/galaxy-foundation/icicb-base/kvdb/skiperrors"
+	"github.com/galaxy-foundation/icicb-base/kvdb/table"
 
 	"github.com/goicicb/logger"
 )

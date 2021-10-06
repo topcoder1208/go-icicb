@@ -2,7 +2,7 @@ package evmstore
 
 import (
 	"github.com/ethereum/go-ethereum/common"
-	"github.com/galaxy126/icicb-base/inter/idx"
+	"github.com/galaxy-foundation/icicb-base/inter/idx"
 
 	"github.com/goicicb/evmcore"
 )

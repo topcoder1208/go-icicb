@@ -1,7 +1,7 @@
 package eventcheck
 
 import (
-	base "github.com/galaxy126/icicb-base/eventcheck"
+	base "github.com/galaxy-foundation/icicb-base/eventcheck"
 
 	"github.com/goicicb/eventcheck/epochcheck"
 )

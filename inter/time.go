@@ -3,7 +3,7 @@ package inter
 import (
 	"time"
 
-	"github.com/galaxy126/icicb-base/common/bigendian"
+	"github.com/galaxy-foundation/icicb-base/common/bigendian"
 )
 
 type (

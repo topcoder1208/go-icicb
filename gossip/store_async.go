@@ -1,8 +1,8 @@
 package gossip
 
 import (
-	"github.com/galaxy126/icicb-base/kvdb"
-	"github.com/galaxy126/icicb-base/kvdb/table"
+	"github.com/galaxy-foundation/icicb-base/kvdb"
+	"github.com/galaxy-foundation/icicb-base/kvdb/table"
 )
 
 type asyncStore struct {

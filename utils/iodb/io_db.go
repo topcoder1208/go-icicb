@@ -3,8 +3,8 @@ package iodb
 import (
 	"io"
 
-	"github.com/galaxy126/icicb-base/common/bigendian"
-	"github.com/galaxy126/icicb-base/kvdb"
+	"github.com/galaxy-foundation/icicb-base/common/bigendian"
+	"github.com/galaxy-foundation/icicb-base/kvdb"
 
 	"github.com/goicicb/utils/ioread"
 )

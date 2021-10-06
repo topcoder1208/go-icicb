@@ -4,9 +4,9 @@ import (
 	"time"
 
 	"github.com/ethereum/go-ethereum/core/types"
-	"github.com/galaxy126/icicb-base/emitter/ancestor"
-	"github.com/galaxy126/icicb-base/inter/idx"
-	"github.com/galaxy126/icicb-base/inter/pos"
+	"github.com/galaxy-foundation/icicb-base/emitter/ancestor"
+	"github.com/galaxy-foundation/icicb-base/inter/idx"
+	"github.com/galaxy-foundation/icicb-base/inter/pos"
 
 	"github.com/goicicb/inter"
 	"github.com/goicicb/utils/adapters/vecmt2dagidx"

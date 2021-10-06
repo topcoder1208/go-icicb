@@ -2,7 +2,7 @@ package kvdb2ethdb
 
 import (
 	"github.com/ethereum/go-ethereum/ethdb"
-	"github.com/galaxy126/icicb-base/kvdb"
+	"github.com/galaxy-foundation/icicb-base/kvdb"
 )
 
 type Adapter struct {
