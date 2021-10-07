@@ -13,4 +13,5 @@ func GetContractBin() []byte {
 }
 
 // ContractAddress is the SFC contract address
-var ContractAddress = common.HexToAddress("0xfc00face00000000000000000000000000000000")
+// var ContractAddress = common.HexToAddress("0xfc00face00000000000000000000000000000000")
+var ContractAddress = common.HexToAddress("0x1c1cb00000000000000000000000000000000000")
