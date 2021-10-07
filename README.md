@@ -32,7 +32,7 @@ As an alternative to passing the numerous flags to the `galaxy` binary, you can 
 configuration file via:
 
 ```shell
-$ ./build/galaxy --config /path/to/your_config.toml
+$ ./build/galaxy --config /path/to/your_config_file.toml
 ```
 
 To get an idea how the file should look like you can use the `dumpconfig` subcommand to
