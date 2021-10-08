@@ -9,6 +9,13 @@ galaxy:
 	    -ldflags "-s -w -X github.com/giticicb/cmd/galaxy/launcher.gitCommit=$${GIT_COMMIT} -X github.com/giticicb/cmd/galaxy/launcher.gitDate=$${GIT_DATE}" \
 	    -o build/galaxy.exe \
 	    ./cmd/galaxy
+ubuntu:
+	GIT_COMMIT=`git rev-list -1 HEAD 2>/dev/null || echo ""` && \
+	GIT_DATE=`git log -1 --date=short --pretty=format:%ct 2>/dev/null || echo ""` && \
+	go build \
+	    -ldflags "-s -w -X github.com/giticicb/cmd/galaxy/launcher.gitCommit=$${GIT_COMMIT} -X github.com/giticicb/cmd/galaxy/launcher.gitDate=$${GIT_DATE}" \
+	    -o build/galaxy \
+	    ./cmd/galaxy
 
 .PHONY: galaxy_mac
 galaxy_mac:
