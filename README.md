@@ -45,6 +45,10 @@ $ ./build/galaxy --your-favourite-flags dumpconfig
 #### Validator
 
 New validator private key may be created with `galaxy validator new` command.
+```shell
+$ ./build/galaxy validator new
+```
+
 
 To launch a validator, you have to use `--validator.id` and `--validator.pubkey` flags to enable events emitter.
 

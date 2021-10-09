@@ -15,9 +15,9 @@ import (
 )
 
 const (
-	DefaultP2PPort  = 5060  // Default p2p port for listening
-	DefaultHTTPPort = 18545 // Default TCP port for the HTTP RPC server
-	DefaultWSPort   = 18546 // Default TCP port for the websocket RPC server
+	DefaultP2PPort  = 5060 // Default p2p port for listening
+	DefaultHTTPPort = 5050 // Default TCP port for the HTTP RPC server
+	DefaultWSPort   = 5051 // Default TCP port for the websocket RPC server
 )
 
 func overrideFlags() {

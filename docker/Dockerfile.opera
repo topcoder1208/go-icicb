@@ -24,6 +24,6 @@ RUN apk add --no-cache ca-certificates
 
 COPY --from=builder /tmp/galaxy /
 
-EXPOSE 5050 18545 18546 18547 19090
+EXPOSE 5050 5060 5061 18547 19090
 
 ENTRYPOINT ["/galaxy"]
