@@ -1,8 +1,8 @@
 .PHONY: all
-all: ubuntu
+all: linux
 
-.PHONY: galaxy
-galaxy:
+.PHONY: win
+win:
 	GIT_COMMIT=`git rev-list -1 HEAD 2>/dev/null || echo ""` && \
 	GIT_DATE=`git log -1 --date=short --pretty=format:%ct 2>/dev/null || echo ""` && \
 	go build \
@@ -10,7 +10,7 @@ galaxy:
 	    -o build/galaxy.exe \
 	    ./cmd/galaxy
 
-ubuntu:
+linux:
 	GIT_COMMIT=`git rev-list -1 HEAD 2>/dev/null || echo ""` && \
 	GIT_DATE=`git log -1 --date=short --pretty=format:%ct 2>/dev/null || echo ""` && \
 	go build \
@@ -18,8 +18,8 @@ ubuntu:
 	    -o build/galaxy \
 	    ./cmd/galaxy
 
-.PHONY: galaxy_mac
-galaxy_mac:
+.PHONY: mac
+mac:
 	GIT_COMMIT=`git rev-list -1 HEAD 2>/dev/null || echo ""` && \
 	GIT_DATE=`git log -1 --date=short --pretty=format:%ct 2>/dev/null || echo ""` && \
 	go build \

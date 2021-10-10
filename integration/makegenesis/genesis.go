@@ -60,24 +60,24 @@ func MakeGenesisStore() *genesisstore.Store {
 	var accounts = []ValidatorAccount{
 		{
 			address:   "0x3c85D69dCC0Cc8471089889D6846E36c3E1baD65",
-			validator: "c00419b6c7077f132688ae537a396030eb46202b204a3a21b9c1b28b1e59a6cf93d70f6dd67ebaccd4b14cd2352f819c914e8584b0bb8f002e2d3c451247ed43d1f5",
+			validator: "0419b6c7077f132688ae537a396030eb46202b204a3a21b9c1b28b1e59a6cf93d70f6dd67ebaccd4b14cd2352f819c914e8584b0bb8f002e2d3c451247ed43d1f5",
 		},
 		{
 			address:   "0x977a6B645d98CF58f2b02a17E1E51D7228D091e7",
-			validator: "c00496671a7a41a4638f6fb07c814df9281ebc343d7e4b595857483f8bb40932454c5f3f9988f4319b99b571a27970b00fafa2fa6c4c87766738106c4988047915c5",
+			validator: "0496671a7a41a4638f6fb07c814df9281ebc343d7e4b595857483f8bb40932454c5f3f9988f4319b99b571a27970b00fafa2fa6c4c87766738106c4988047915c5",
 		},
 		{
 			address:   "0x239fA7623354eC26520dE878B52f13Fe84b06971",
-			validator: "c004c2c967b2880ff5fb6cfd1373e733d644701382c3ea86162b995baf0d42a44bd0c79bb58503bd83a4441ca87843cc2f2a0099562b99d8a50d3b14193b79e77b90",
+			validator: "04c2c967b2880ff5fb6cfd1373e733d644701382c3ea86162b995baf0d42a44bd0c79bb58503bd83a4441ca87843cc2f2a0099562b99d8a50d3b14193b79e77b90",
 		},
 
 		{
 			address:   "0x89183Af8f61F31a0fB74f3ae69e495684Adaca84",
-			validator: "c0042d618582085fcbe8a2222a58b2be14a5a051a93ca35fd07bcb492e63a7a2f04932e4b854ae4753ba429eb5718ac194e2e23ea6f549fb90f0517e17ee34b1ac73",
+			validator: "042d618582085fcbe8a2222a58b2be14a5a051a93ca35fd07bcb492e63a7a2f04932e4b854ae4753ba429eb5718ac194e2e23ea6f549fb90f0517e17ee34b1ac73",
 		},
 		{
 			address:   "0x42009042B5271bAD78430adE177f2313DC120000",
-			validator: "c0046e9cfad4ec96ca279c05fb892441372b04857dc6dbd760fbede76ddbba2c86ca7fc7dcff1ec3fe86f501b2b1c60aae172a512b1e275d19592cb44a1224f15f78",
+			validator: "04507ab1e6348050324b122f14710aa3f5699d578c07b3a32f511852de8422b776f283bbec1d1f74aac88e822fa664af35b266661ecaa6e2642990400c4d91599c",
 		},
 	}
 	num := len(accounts)
@@ -91,13 +91,6 @@ func MakeGenesisStore() *genesisstore.Store {
 		addr := common.HexToAddress(accounts[i-1].address)
 		pubkeyraw := common.Hex2Bytes(accounts[i-1].validator)
 		fmt.Printf("\n# addr %x pubkeyraw %s len %d\n", addr, hex.EncodeToString(pubkeyraw), len(pubkeyraw))
-		/*
-			reader := rand.New(rand.NewSource(nsec + int64(i)))
-			key, _ := ecdsa.GenerateKey(crypto.S256(), reader)
-			pubkeyraw1 := crypto.FromECDSAPub(&key.PublicKey)
-			addr1 := crypto.PubkeyToAddress(key.PublicKey)
-			fmt.Printf("\npubkey %x \t address %x \t privatekey %x \n", pubkeyraw1, addr1, key.D)
-		*/
 		validatorID := idx.ValidatorID(i)
 		pubKey := validatorpk.PubKey{
 			Raw:  pubkeyraw,
