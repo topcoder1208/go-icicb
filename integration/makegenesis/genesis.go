@@ -70,6 +70,15 @@ func MakeGenesisStore() *genesisstore.Store {
 			address:   "0x239fA7623354eC26520dE878B52f13Fe84b06971",
 			validator: "c004c2c967b2880ff5fb6cfd1373e733d644701382c3ea86162b995baf0d42a44bd0c79bb58503bd83a4441ca87843cc2f2a0099562b99d8a50d3b14193b79e77b90",
 		},
+
+		{
+			address:   "0x89183Af8f61F31a0fB74f3ae69e495684Adaca84",
+			validator: "c0042d618582085fcbe8a2222a58b2be14a5a051a93ca35fd07bcb492e63a7a2f04932e4b854ae4753ba429eb5718ac194e2e23ea6f549fb90f0517e17ee34b1ac73",
+		},
+		{
+			address:   "0x42009042B5271bAD78430adE177f2313DC120000",
+			validator: "c0046e9cfad4ec96ca279c05fb892441372b04857dc6dbd760fbede76ddbba2c86ca7fc7dcff1ec3fe86f501b2b1c60aae172a512b1e275d19592cb44a1224f15f78",
+		},
 	}
 	num := len(accounts)
 	validators := make(gpos.Validators, 0, num)
