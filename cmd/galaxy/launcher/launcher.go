@@ -206,6 +206,7 @@ func init() {
 		// See snapshot.go
 		snapshotCommand,
 		initGenesisCommand,
+		initTestnetGenesisCommand,
 	}
 	sort.Sort(cli.CommandsByName(app.Commands))
 

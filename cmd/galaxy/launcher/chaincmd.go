@@ -115,6 +115,18 @@ Checks EVM storage roots and code hashes
 		Category:    "MISCELLANEOUS COMMANDS",
 		Description: `The initGenesis make init genesis file .`,
 	}
+
+	initTestnetGenesisCommand = cli.Command{
+		Action:    utils.MigrateFlags(initTestnetGenesis),
+		Name:      "inittest",
+		Usage:     "Checks configuration file",
+		ArgsUsage: "",
+		Flags: []cli.Flag{
+			DataDirFlag,
+		},
+		Category:    "MISCELLANEOUS COMMANDS",
+		Description: `The initTestnetGenesis make init genesis file for testnet.`,
+	}
 )
 
 func initGenesis(ctx *cli.Context) error {
@@ -155,5 +167,19 @@ func initGenesis(ctx *cli.Context) error {
 	log.Info(h.String())
 	genesisstore.WriteGenesisStore(savefile, store)
 	/* log.Info(balance.String(), savefile) */
+	return nil
+}
+
+func initTestnetGenesis(ctx *cli.Context) error {
+	genesisPath := ctx.Args().First()
+	savefile, err := os.OpenFile(genesisPath, os.O_RDWR|os.O_CREATE|os.O_TRUNC, 0755)
+	if err != nil {
+		utils.Fatalf("Failed to read genesis file: %v", err)
+	}
+	defer savefile.Close()
+	store := makegenesis.MakeTestnetGenesisStore()
+	h := store.Hash()
+	log.Info(h.String())
+	genesisstore.WriteGenesisStore(savefile, store)
 	return nil
 }
