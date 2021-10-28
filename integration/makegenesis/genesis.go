@@ -53,11 +53,27 @@ type ValidatorAccount struct {
 }
 
 func MakeGenesisStore() *genesisstore.Store {
-	var balance *big.Int = futils.ToIcicb(23 * 1e8)
-	stake := futils.ToIcicb(2 * 1e8) // *big.Int
+	var balance *big.Int = futils.ToIcicb(50 * 1e6)
+	initialBalance := futils.ToIcicb(450 * 1e6) // *big.Int
+	stake := futils.ToIcicb(200 * 1e6)          // *big.Int
+
 	genStore := genesisstore.NewMemStore()
 	genStore.SetRules(galaxy.MainNetRules())
-	var accounts = []ValidatorAccount{
+
+	var initialAccounts = []string{
+		"0xD3F7297C02753BC05A757F2d8742fdbD40D4bB5E",
+		"0x3EAC06a9b0ADfa47ACA5F5e4E27A9Bc6678Adb7C",
+		"0xF76aF9aDA3734C3d15775D024B9eD07d82948428",
+		"0xE993049F119a339437e4da98E0cE0f60e05AFEB9",
+		"0xDFF14ff43a348d6Cd3077B29aEec042f3E6532E1",
+		"0x5A651554794B63c7827c08C6674fECDDfB60238c",
+		"0x6a8A6D31b919f43E03f14E0DB968810E61bD5D92",
+		"0x2cE0Cae230Ff22592078392e6EdDB990Be7c9d70",
+		"0x7d219C82EfB45347c265F19571D54de3E01F8620",
+		"0x708F6bEa5d7d9DF9E5E531647CA6FE0c95c432D5",
+	}
+
+	var validatorAccounts = []ValidatorAccount{
 		// for mainnet
 		{
 			address:   "0x8888888f427095467f02112ee37aff975ae80cf7",
@@ -68,7 +84,7 @@ func MakeGenesisStore() *genesisstore.Store {
 			validator: "04bb57b6f54ac71f24e8fd5fb29a79c2b1b4816057a9d7964b34015014d20fe7e24c878eb261417841b78a27ea00d33a652a584ebb045ead563cc555c94c754426",
 		},
 	}
-	num := len(accounts)
+	num := len(validatorAccounts)
 	validators := make(gpos.Validators, 0, num)
 
 	now := time.Now() // current local time
@@ -76,8 +92,8 @@ func MakeGenesisStore() *genesisstore.Store {
 	nsec := now.UnixNano()
 	time := inter.Timestamp(nsec)
 	for i := 1; i <= num; i++ {
-		addr := common.HexToAddress(accounts[i-1].address)
-		pubkeyraw := common.Hex2Bytes(accounts[i-1].validator)
+		addr := common.HexToAddress(validatorAccounts[i-1].address)
+		pubkeyraw := common.Hex2Bytes(validatorAccounts[i-1].validator)
 		fmt.Printf("\n# addr %x pubkeyraw %s len %d\n", addr, hex.EncodeToString(pubkeyraw), len(pubkeyraw))
 		validatorID := idx.ValidatorID(i)
 		pubKey := validatorpk.PubKey{
@@ -96,9 +112,14 @@ func MakeGenesisStore() *genesisstore.Store {
 			Status:           0,
 		})
 	}
-	// validators := GetFakeValidators(num)
-
 	totalSupply := new(big.Int)
+	for _, val := range initialAccounts {
+		genStore.SetEvmAccount(common.HexToAddress(val), genesis.Account{
+			Code:    []byte{},
+			Balance: initialBalance,
+			Nonce:   0,
+		})
+	}
 	for _, val := range validators {
 		genStore.SetEvmAccount(val.Address, genesis.Account{
 			Code:    []byte{},
@@ -114,6 +135,7 @@ func MakeGenesisStore() *genesisstore.Store {
 			LockupDuration:     0,
 			EarlyUnlockPenalty: new(big.Int),
 		})
+		totalSupply.Add(totalSupply, stake)
 		totalSupply.Add(totalSupply, balance)
 	}
 
@@ -127,7 +149,7 @@ func MakeGenesisStore() *genesisstore.Store {
 		FirstEpoch:    2,
 		Time:          time,
 		PrevEpochTime: time - inter.Timestamp(time.Time().Hour()),
-		ExtraData:     []byte("fake"),
+		ExtraData:     []byte("galaxy"),
 		DriverOwner:   owner,
 		TotalSupply:   totalSupply,
 	})
@@ -173,11 +195,12 @@ func MakeGenesisStore() *genesisstore.Store {
 	return genStore
 }
 func MakeTestnetGenesisStore() *genesisstore.Store {
-	var balance *big.Int = futils.ToIcicb(15 * 1e8)
-	stake := futils.ToIcicb(10 * 1e8) // *big.Int
+	var balance *big.Int = futils.ToIcicb(50 * 1e6)
+	initialBalance := futils.ToIcicb(450 * 1e6) // *big.Int
+	stake := futils.ToIcicb(200 * 1e6)          // *big.Int
 	genStore := genesisstore.NewMemStore()
 	genStore.SetRules(galaxy.TestNetRules())
-	var accounts = []ValidatorAccount{
+	var validatorAccounts = []ValidatorAccount{
 		{
 			address:   "0x8700003625B9207E639936ab8F57869eF30C0000",
 			validator: "041121f0a63c8f114028cb4f4be44d7df0f473707396b8ddb31c386deec3ea7f9178995746bba3af12c115696894afe633171c195111824b4491c815bfddc8eeeb",
@@ -187,7 +210,21 @@ func MakeTestnetGenesisStore() *genesisstore.Store {
 			validator: "04731009ad994c6943503cb1379ce87fd90ff766b6a7a9508db69af75a89e52ddfd05e5537c1b1bc46ee04f9a299f20b7cfb8a0c6fb3b56d22ae5d7cc86c1db8d3",
 		},
 	}
-	num := len(accounts)
+
+	var initialAccounts = []string{
+		"0x441d630d82365d8636189159B782Fa86b1793351",
+		"0xE71C15558818588DFef16E4a3E79336244299A5d",
+		"0xf2940a954f398Ab149970cC226A58E1DeF5C848A",
+		"0x951C794A06d80f0C63212cFDF0dea8E1243bb165",
+		"0xa49F00F8dC937C6Aea1A70011953470a62065a9B",
+		"0x6Cd38218721d717A0429CB93777c855a00FE4a24",
+		"0xa071A46E69c6E423da1d95582E102154f05FccC2",
+		"0xE0192D411fa2Df87725D5Dfb12eF2c661b938609",
+		"0xE4174e89F3f14583c666f852315Bf961ed4de3DB",
+		"0x8548DD7b86357b1C35B7459c1C7Faa4F46585F85",
+	}
+
+	num := len(validatorAccounts)
 	validators := make(gpos.Validators, 0, num)
 
 	now := time.Now() // current local time
@@ -195,8 +232,8 @@ func MakeTestnetGenesisStore() *genesisstore.Store {
 	nsec := now.UnixNano()
 	time := inter.Timestamp(nsec)
 	for i := 1; i <= num; i++ {
-		addr := common.HexToAddress(accounts[i-1].address)
-		pubkeyraw := common.Hex2Bytes(accounts[i-1].validator)
+		addr := common.HexToAddress(validatorAccounts[i-1].address)
+		pubkeyraw := common.Hex2Bytes(validatorAccounts[i-1].validator)
 		fmt.Printf("\n# addr %x pubkeyraw %s len %d\n", addr, hex.EncodeToString(pubkeyraw), len(pubkeyraw))
 		validatorID := idx.ValidatorID(i)
 		pubKey := validatorpk.PubKey{
@@ -215,9 +252,16 @@ func MakeTestnetGenesisStore() *genesisstore.Store {
 			Status:           0,
 		})
 	}
-	// validators := GetFakeValidators(num)
-
 	totalSupply := new(big.Int)
+
+	for _, val := range initialAccounts {
+		genStore.SetEvmAccount(common.HexToAddress(val), genesis.Account{
+			Code:    []byte{},
+			Balance: initialBalance,
+			Nonce:   0,
+		})
+	}
+
 	for _, val := range validators {
 		genStore.SetEvmAccount(val.Address, genesis.Account{
 			Code:    []byte{},
@@ -233,6 +277,7 @@ func MakeTestnetGenesisStore() *genesisstore.Store {
 			LockupDuration:     0,
 			EarlyUnlockPenalty: new(big.Int),
 		})
+		totalSupply.Add(totalSupply, stake)
 		totalSupply.Add(totalSupply, balance)
 	}
 
