@@ -53,30 +53,20 @@ type ValidatorAccount struct {
 }
 
 func MakeGenesisStore() *genesisstore.Store {
-	var balance *big.Int = futils.ToIcicb(15 * 1e8)
-	stake := futils.ToIcicb(10 * 1e8) // *big.Int
+	var balance *big.Int = futils.ToIcicb(23 * 1e8)
+	stake := futils.ToIcicb(2 * 1e8) // *big.Int
 	genStore := genesisstore.NewMemStore()
 	genStore.SetRules(galaxy.MainNetRules())
 	var accounts = []ValidatorAccount{
-		// for testnet
-		{
-			address:   "0x8700003625B9207E639936ab8F57869eF30C0000",
-			validator: "041121f0a63c8f114028cb4f4be44d7df0f473707396b8ddb31c386deec3ea7f9178995746bba3af12c115696894afe633171c195111824b4491c815bfddc8eeeb",
-		},
-		{
-			address:   "0x8888eb243Bd459a85fecd703C173E83e56398888",
-			validator: "04731009ad994c6943503cb1379ce87fd90ff766b6a7a9508db69af75a89e52ddfd05e5537c1b1bc46ee04f9a299f20b7cfb8a0c6fb3b56d22ae5d7cc86c1db8d3",
-		},
-
 		// for mainnet
-		// {
-		// 	address:   "0x8888888f427095467f02112ee37aff975ae80cf7",
-		// 	validator: "0489d09a8197aea663c2ad3bb908041310a02af11ffb32e239f116daea84b8accc470359be02e64b34a33e21d19cc4ac2bac53ff4daedf8c39cef4c3c483ed173b",
-		// },
-		// {
-		// 	address:   "0x000000008c2e6efa71979f1aa6d6167a4bb502fb",
-		// 	validator: "04bb57b6f54ac71f24e8fd5fb29a79c2b1b4816057a9d7964b34015014d20fe7e24c878eb261417841b78a27ea00d33a652a584ebb045ead563cc555c94c754426",
-		// },
+		{
+			address:   "0x8888888f427095467f02112ee37aff975ae80cf7",
+			validator: "0489d09a8197aea663c2ad3bb908041310a02af11ffb32e239f116daea84b8accc470359be02e64b34a33e21d19cc4ac2bac53ff4daedf8c39cef4c3c483ed173b",
+		},
+		{
+			address:   "0x000000008c2e6efa71979f1aa6d6167a4bb502fb",
+			validator: "04bb57b6f54ac71f24e8fd5fb29a79c2b1b4816057a9d7964b34015014d20fe7e24c878eb261417841b78a27ea00d33a652a584ebb045ead563cc555c94c754426",
+		},
 	}
 	num := len(accounts)
 	validators := make(gpos.Validators, 0, num)
@@ -183,31 +173,19 @@ func MakeGenesisStore() *genesisstore.Store {
 	return genStore
 }
 func MakeTestnetGenesisStore() *genesisstore.Store {
-	var balance *big.Int = futils.ToIcicb(5 * 1e9)
-	stake := futils.ToIcicb(1e8) // *big.Int
+	var balance *big.Int = futils.ToIcicb(15 * 1e8)
+	stake := futils.ToIcicb(10 * 1e8) // *big.Int
 	genStore := genesisstore.NewMemStore()
 	genStore.SetRules(galaxy.TestNetRules())
 	var accounts = []ValidatorAccount{
-		/* {
-			address:   "0x89183Af8f61F31a0fB74f3ae69e495684Adaca84",
-			validator: "042d618582085fcbe8a2222a58b2be14a5a051a93ca35fd07bcb492e63a7a2f04932e4b854ae4753ba429eb5718ac194e2e23ea6f549fb90f0517e17ee34b1ac73",
+		{
+			address:   "0x8700003625B9207E639936ab8F57869eF30C0000",
+			validator: "041121f0a63c8f114028cb4f4be44d7df0f473707396b8ddb31c386deec3ea7f9178995746bba3af12c115696894afe633171c195111824b4491c815bfddc8eeeb",
 		},
 		{
-			address:   "0x42009042B5271bAD78430adE177f2313DC120000",
-			validator: "04507ab1e6348050324b122f14710aa3f5699d578c07b3a32f511852de8422b776f283bbec1d1f74aac88e822fa664af35b266661ecaa6e2642990400c4d91599c",
-		}, */
-		{
-			address:   "0x3c85D69dCC0Cc8471089889D6846E36c3E1baD65",
-			validator: "0419b6c7077f132688ae537a396030eb46202b204a3a21b9c1b28b1e59a6cf93d70f6dd67ebaccd4b14cd2352f819c914e8584b0bb8f002e2d3c451247ed43d1f5",
+			address:   "0x8888eb243Bd459a85fecd703C173E83e56398888",
+			validator: "04731009ad994c6943503cb1379ce87fd90ff766b6a7a9508db69af75a89e52ddfd05e5537c1b1bc46ee04f9a299f20b7cfb8a0c6fb3b56d22ae5d7cc86c1db8d3",
 		},
-		{
-			address:   "0x977a6B645d98CF58f2b02a17E1E51D7228D091e7",
-			validator: "0496671a7a41a4638f6fb07c814df9281ebc343d7e4b595857483f8bb40932454c5f3f9988f4319b99b571a27970b00fafa2fa6c4c87766738106c4988047915c5",
-		},
-		/* {
-			address:   "0x239fA7623354eC26520dE878B52f13Fe84b06971",
-			validator: "04c2c967b2880ff5fb6cfd1373e733d644701382c3ea86162b995baf0d42a44bd0c79bb58503bd83a4441ca87843cc2f2a0099562b99d8a50d3b14193b79e77b90",
-		}, */
 	}
 	num := len(accounts)
 	validators := make(gpos.Validators, 0, num)
