@@ -119,6 +119,7 @@ func MakeGenesisStore() *genesisstore.Store {
 			Balance: initialBalance,
 			Nonce:   0,
 		})
+		totalSupply.Add(totalSupply, initialBalance)
 	}
 	for _, val := range validators {
 		genStore.SetEvmAccount(val.Address, genesis.Account{
@@ -260,6 +261,7 @@ func MakeTestnetGenesisStore() *genesisstore.Store {
 			Balance: initialBalance,
 			Nonce:   0,
 		})
+		totalSupply.Add(totalSupply, initialBalance)
 	}
 
 	for _, val := range validators {
