@@ -59,36 +59,36 @@ func MakeGenesisStore() *genesisstore.Store {
 	var validatorAccounts = []ValidatorAccount{
 		// for mainnet
 		{
-			address:   "0x765CBa86f898De0210B5c110732E24de89D893a1",
-			validator: "04ce49f7c6afdf7a457f31fc6e6216c8c0df3f46d0f7a80ccd80b35a4f91313184b345efd3724b4639736405a2c3bfb4b1aabea58a34fa2a58cdc3bbea9d80f234",
+			address:   "0x1111a9306aacc6b1121650eb1bb6f260d9cfad85",
+			validator: "04e96025f5c550b66b1c87b8ebeb0cbcb6b306b5b2d1b45186e04e9d1b8087752896b0a95983fd025a867f87848326ece5cfd75983d9b37706240438e30d5eecbb",
 		},
 		{
-			address:   "0x8525e36dFdd0191326595e57C5f0e020c8CFf371",
-			validator: "04653c606752353c3196193ca132466d137863c2966ac0479dbb989893e41bde818e7fcc6e1ec3d22f5262fb1c82814edf6dfb1368f34c6db400d7b44186449719",
+			address:   "0x2222a13de6d0ab4bfb017e1b29d6a5b430e07574",
+			validator: "0484a101d22ac8b715683219bcea75c5b192821e6a9a5a6080eff983bfe0a4b8e5fbd1452300f9c9fae116987e030a80cd1fafd2e9bff2b2955af623dacf2fb6f2",
 		},
 		{
-			address:   "0x4a7A58a07cc1eaB994d0863673518D4121A9548f",
-			validator: "04a4008e352eabeff85db3f1eea164f6970d6d0d7846061b061c666037e482f68e0b52f4df3bfdc309658f6b52665791e1da10b890f8f7715b218ee28ae5c09ed7",
+			address:   "0x3333bfdaf4a1b2f0b748f3a88e3c853d1e2b8f5d",
+			validator: "047301efa2653128b50490d37bd7a58a1af88ba397b1f2a362487e1d3a02113d6450ce444ca39071867ce874172e8c465bf41bdf2f68ff5fc667eeae366df4377d",
 		},
 		{
-			address:   "0x96d383E6E678B443C7B4bE832682d0A489f7FEb7",
-			validator: "04939c39a101d5520339bff351a5cba585d85a72db013c187f8a329962c5ce0ffbc9745e680e9cbef2e448aec19809ad8e5fbdf318720d205e89897d4704849950",
+			address:   "0x44441858f827b0ba5a72ede2f8615c6f3deaeab4",
+			validator: "04c33e9f40aa4c4db2a117a48581b17d3e31acebf87ea54ce6d19d95da134ea0cf207654a5e2d312d965a4a56a7e24c39a11c69d9995b053b617047c4e1f53e55e",
 		},
 		{
-			address:   "0xb32f9F1e98525F7cCaD6225162D2cDD8DBD971d9",
-			validator: "0405fb835b662f599d4aeb1952a3e5ddd8002e6043fea0e0b1126adbd0ea8cebe5c6a5024fb8fc069c139b405ed261ea3f1a779c3a83b1041a37e1f9a8dfb163be",
+			address:   "0x5555e6e7f5d013ed35e76c117a18ac196bd0eee1",
+			validator: "046cf5490c7702a6678cfaaf6ad0f5099b38a0db4cce030b5f48844ccbe94d05299cedbf6d12e5909b508330d8132c17b8a066ada99235593364529faa86f39bba",
 		},
 		{
-			address:   "0xd7F6465f20530856864FDa690E95Cf29e0c9037A",
-			validator: "0417b350522e3f8411e171ae3d4f7709ce0b10a02900e71581a7ac268c80472f97a6e6c87d5e2b1edbfa35357032d3627ccf3f90ee8f51ce49360fb1855e12f8ef",
+			address:   "0x66664259885aa5a378edc418587f85943d899eb6",
+			validator: "045024d1fded08f26d87261794e3b4a7c75a4b56206894596df2ed67114bccf4f09647ba962f929543781c7de7ede4fdc119bbf04bcd815268ff8c440354def788",
 		},
 		{
-			address:   "0xb61A862aD5D3385AB34B72ed77CcD6B830411dc6",
-			validator: "04f704a31767b8f6d3606e166c35adf6ec725675196047b5012c0e05f849901d327bdaf44585a826ef7e986fbf060b8682341385b2db1bda7394edaca00752cd29",
+			address:   "0x77773049d7754024711c4615f0714752acc8676b",
+			validator: "04b8bd4d5deeb04a89788b9fcb937beecd0755ead73bb91d65c2a1ffc702fc5f8c02b6586a471389aeaf2ac76bcb910ee998bf978fb710221c225a7c4e15b4fd73",
 		},
 		{
-			address:   "0x85a8b7bf26F26f5a828EB0ae5F497fa9c6baDB0a",
-			validator: "04171eb754a53a173c500bf3c5b1e04a632924a04198b73f1881a19574c79e63e561b17f244dbbfcaec1e45a9310487d4c88bb78df187f17dfc1da98f619b184de",
+			address:   "0x8888a8d58edeb333d35ef9d93112e79383890a8f",
+			validator: "0481d3d50a85f48b791ced92002db6f61a0e7209445e31b3a23537332bec6b02e99ae691ab446ba20ef09e1c167cb8a07a31823eeb94828d5e34074af52f63719e",
 		},
 	}
 
@@ -99,7 +99,7 @@ func MakeGenesisStore() *genesisstore.Store {
 
 	_total := 5000
 	_validator := 1
-	_staker := 100
+	_staker := 5
 	_initial := (5000 - (_validator+_staker)*num) / len(initialAccounts)
 
 	totalSupply := futils.ToIcicb(uint64(_total) * 1e6)
@@ -116,7 +116,7 @@ func MakeGenesisStore() *genesisstore.Store {
 	for i := 1; i <= num; i++ {
 		addr := common.HexToAddress(validatorAccounts[i-1].address)
 		pubkeyraw := common.Hex2Bytes(validatorAccounts[i-1].validator)
-		fmt.Printf("\n# addr %x pubkeyraw %s len %d\n", addr, hex.EncodeToString(pubkeyraw), len(pubkeyraw))
+		// fmt.Printf("\n# addr %x pubkeyraw %s len %d\n", addr, hex.EncodeToString(pubkeyraw), len(pubkeyraw))
 		validatorID := idx.ValidatorID(i)
 		pubKey := validatorpk.PubKey{
 			Raw:  pubkeyraw,
@@ -140,7 +140,6 @@ func MakeGenesisStore() *genesisstore.Store {
 			Balance: initialBalance,
 			Nonce:   0,
 		})
-		// totalSupply.Add(totalSupply, initialBalance)
 	}
 	for _, val := range validators {
 		genStore.SetEvmAccount(val.Address, genesis.Account{
@@ -157,8 +156,6 @@ func MakeGenesisStore() *genesisstore.Store {
 			LockupDuration:     0,
 			EarlyUnlockPenalty: new(big.Int),
 		})
-		// totalSupply.Add(totalSupply, stake)
-		// totalSupply.Add(totalSupply, balance)
 	}
 
 	var owner common.Address

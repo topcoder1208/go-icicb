@@ -91,12 +91,13 @@ var (
 	}
 
 	AllowedGalaxyGenesisHashes = map[uint64]hash.Hash{
-		galaxy.MainNetworkID: hash.HexToHash("0xbd7265f2e519e8112b52780fc6c24bad7bd0cd6557287b291887def44a76aa65"), // real 0xa97be35f423207258c18624416d67950933456c9a549585b9517c2d81c42a0ce
+		galaxy.MainNetworkID: hash.HexToHash("0x3145c0eeac2b3a660364f1d466555dc27204e1221277d88608b8add80f46e1dc"), // real 0xa97be35f423207258c18624416d67950933456c9a549585b9517c2d81c42a0ce
 		galaxy.TestNetworkID: hash.HexToHash("0x322f536c852ab9f8bc2cdc8fb15d5216d9cc56a0d9136f00b58292b159a5142a"), // real 0x0774ccb0a820e486c3f435b805240f0ab8ceb79bf19af9617b548a28ce6ff9d2
 	}
 )
 
 const (
+
 	// DefaultCacheSize is calculated as memory consumption in a worst case scenario with default configuration
 	// Average memory consumption might be 3-5 times lower than the maximum
 	DefaultCacheSize  = 3200
