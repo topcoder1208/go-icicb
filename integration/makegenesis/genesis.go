@@ -59,7 +59,7 @@ func MakeGenesisStore() *genesisstore.Store {
 	var validatorAccounts = []ValidatorAccount{
 		// for mainnet
 		{
-			address:   "0x1111a9306aacc6b1121650eb1bb6f260d9cfad85",
+			address:   "0x111118fa5f43538A4Fafc956920C575c29fCED43",
 			validator: "04e96025f5c550b66b1c87b8ebeb0cbcb6b306b5b2d1b45186e04e9d1b8087752896b0a95983fd025a867f87848326ece5cfd75983d9b37706240438e30d5eecbb",
 		},
 		{
